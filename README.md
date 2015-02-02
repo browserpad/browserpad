@@ -7,13 +7,15 @@ Inspiration:
 * [http://textop.us](http://wayback.archive.org/web/20130718231049id_/http://textop.us/) (defunct)
 
 Primary features (whole text or selection):
+- [x] support tab key
 - [ ] case change
 - [ ] indent-deindent
 - [ ] Regex search & replace
 - [ ] [smart tabs-to-spaces conversion](http://stackoverflow.com/a/2479925/266309)
 - [ ] wrap-unwrap lines
-- [ ] [save locally](https://github.com/samyk/evercookie)
+- [ ] [auto-save](https://github.com/samyk/evercookie)
 - [ ] permalink / share (via data url)
+- [ ] [save to a file](http://pastebin.com/U8658H5c)
 
 Possible advanced features:
 - [ ] [elastic tabstops](http://nickgravgaard.com/elastictabstops/)
