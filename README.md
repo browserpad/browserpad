@@ -1,5 +1,7 @@
 # Online PlainText Editor
 
+## [Live demo](http://waldyrious.github.io/online-text-editor)
+
 Inspiration:
 * http://textmechanic.com
 * [http://textop.us](http://wayback.archive.org/web/20130718231049id_/http://textop.us/) (defunct)
