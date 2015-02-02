@@ -2,7 +2,7 @@
 
 Inspiration:
 * http://textmechanic.com
-* http://textop.us
+* [http://textop.us](http://wayback.archive.org/web/20130718231049id_/http://textop.us/) (defunct)
 
 Primary features (whole text or selection):
 - [ ] case change
