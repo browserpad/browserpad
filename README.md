@@ -13,7 +13,6 @@ Primary features (whole text or selection):
 - [ ] case change
 - [ ] indent-deindent
 - [ ] Regex search & replace
-- [ ] [smart tabs-to-spaces conversion](http://stackoverflow.com/a/2479925/266309)
 - [ ] wrap-unwrap lines
 - [ ] [auto-save](https://github.com/samyk/evercookie)
 - [ ] permalink / share (via data url)
@@ -24,6 +23,7 @@ Primary features (whole text or selection):
 - [ ] CPL (hard limit) and/or visual guide
 
 Possible advanced features:
+- [ ] [smart tabs-to-spaces conversion](http://stackoverflow.com/a/2479925/266309)
 - [ ] [elastic tabstops](http://nickgravgaard.com/elastictabstops/)
 - [ ] [semantic linebreaks](http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
 - [ ] auto-code formatting, see http://jsbeautifier.org/
