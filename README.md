@@ -5,6 +5,8 @@
 Inspiration:
 * http://textmechanic.com
 * [http://textop.us](http://wayback.archive.org/web/20130718231049id_/http://textop.us/) (defunct)
+* http://www.mytextarea.com/
+* http://www.editpad.org/
 
 Primary features (whole text or selection):
 - [x] support tab key
@@ -16,6 +18,10 @@ Primary features (whole text or selection):
 - [ ] [auto-save](https://github.com/samyk/evercookie)
 - [ ] permalink / share (via data url)
 - [ ] [save to a file](http://pastebin.com/U8658H5c)
+- [ ] statistics (lines/words/characters)
+- [ ] current line/column
+- [ ] line numbers
+- [ ] CPL (hard limit) and/or visual guide
 
 Possible advanced features:
 - [ ] [elastic tabstops](http://nickgravgaard.com/elastictabstops/)
