@@ -12,7 +12,7 @@ Primary features (whole text or selection):
 - [x] support tab key
 - [ ] case change
 - [ ] indent-deindent
-- [ ] Regex search & replace
+- [ ] regex search & replace
 - [ ] wrap-unwrap lines
 - [ ] [auto-save](https://github.com/samyk/evercookie)
 - [ ] permalink / share (via data url)
