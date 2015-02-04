@@ -16,7 +16,7 @@ Hopefully these principles will prevent feature creep
    the [Unix way](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming).
 
 ### Inspiration:
-* The concept was originally conceived by @jjperezaguinaga
+* The concept was originally conceived by [@jjperezaguinaga](https://github.com/jjperezaguinaga)
   on his post "[One line browser notepad](https://coderwall.com/p/lhsrcq/one-line-browser-notepad)".
 * Online plaintext editors (closed-source):
     * [mytextarea.com](http://mytextarea.com)
