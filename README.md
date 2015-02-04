@@ -1,6 +1,6 @@
-# Online PlainText Editor
+# Browserpad
 
-## [Live demo](http://waldyrious.github.io/online-text-editor)
+## [Live demo](http://waldyrious.github.io/browserpad)
 
 Inspiration:
 * Online plaintext editors (closed-source):
