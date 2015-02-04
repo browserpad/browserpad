@@ -15,7 +15,7 @@ Hopefully these principles will prevent feature creep
    and keep the tool focused,
    the [Unix way](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming).
 
-Inspiration:
+### Inspiration:
 * Online plaintext editors (closed-source):
     * [mytextarea.com](http://mytextarea.com)
     * [editpad.org](http://editpad.org)
@@ -23,7 +23,7 @@ Inspiration:
     * [textmechanic.com](http://textmechanic.com)
     * [textop.us](http://wayback.archive.org/web/20130718231049id_/http://textop.us/) (defunct)
 
-Primary features (whole text or selection):
+### Primary features:
 - [x] support tab key
 - [ ] normal / [solarized](https://waldyrious.neocities.org/ted_chiang/the-merchant-and-the-alchemists-gate.html) / night mode (see icon [here](http://pixelmack.github.io/slight/))
 - [ ] case change
@@ -38,7 +38,7 @@ Primary features (whole text or selection):
 - [ ] line numbers
 - [ ] CPL (hard limit) and/or visual guide
 
-Possible advanced features:
+### Possible advanced features:
 - [ ] [smart tabs-to-spaces conversion](http://stackoverflow.com/a/2479925/266309)
 - [ ] [elastic tabstops](http://nickgravgaard.com/elastictabstops/)
 - [ ] [semantic linebreaks](http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
