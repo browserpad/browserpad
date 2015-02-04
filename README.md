@@ -1,6 +1,19 @@
-# Browserpad
+# Browserpad ([live demo](http://waldyrious.github.io/browserpad))
 
-## [Live demo](http://waldyrious.github.io/browserpad)
+A browser-based plain text editor entirely contained within a
+   [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme).
+   
+Browserpad will always be a **plain**text editor:
+   no markdown/html preview, no WYSIWIG, no rich text editing.
+
+It will also always be based on a data URI,
+   so that the loading is instantaneous,
+   and you can save it as a bookmark
+   which will work in the browser even if you're offline.
+
+Hopefully these principles will prevent feature creep
+   and keep the tool focused,
+   the [Unix way](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming).
 
 Inspiration:
 * Online plaintext editors (closed-source):
@@ -8,7 +21,7 @@ Inspiration:
     * [editpad.org](http://editpad.org)
 * Features:
     * [textmechanic.com](http://textmechanic.com)
-    * [http://textop.us](http://wayback.archive.org/web/20130718231049id_/http://textop.us/) (defunct)
+    * [textop.us](http://wayback.archive.org/web/20130718231049id_/http://textop.us/) (defunct)
 
 Primary features (whole text or selection):
 - [x] support tab key
