@@ -17,7 +17,7 @@ Primary features (whole text or selection):
 - [ ] indent-deindent
 - [ ] regex search & replace
 - [ ] wrap-unwrap lines
-- [ ] [auto-save](https://github.com/samyk/evercookie)
+- [ ] auto-save (see [here](https://github.com/JakobKallin/Text-Editor/blob/gh-pages/index.html) and [here](https://github.com/samyk/evercookie))
 - [ ] permalink / share (via data url)
 - [ ] [save to a file](http://pastebin.com/U8658H5c) ([custom filename](http://stackoverflow.com/q/283956/266309))
 - [ ] statistics (lines/words/characters)
