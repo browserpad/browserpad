@@ -12,6 +12,7 @@ Inspiration:
 
 Primary features (whole text or selection):
 - [x] support tab key
+- [ ] normal / [solarized](https://waldyrious.neocities.org/ted_chiang/the-merchant-and-the-alchemists-gate.html) / night mode (see icon [here](http://pixelmack.github.io/slight/))
 - [ ] case change
 - [ ] indent-deindent
 - [ ] regex search & replace
