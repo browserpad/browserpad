@@ -19,17 +19,15 @@
       line-height:1.5rem; padding:0 0.5em; background-color:%23eee; color:gray; font-family:monospace; }
   &lt;/style&gt;
   &lt;textarea autofocus placeholder="type here"
-  onkeydown = "(function(t){
-  /* tab key support */
-  if (event.keyCode===9) {
+  onkeydown = "(function(t){if(event.keyCode===9){ /* tab key support */
     event.preventDefault();
     var v = t.value, s = t.selectionStart, e = t.selectionEnd;
     t.value = v.substring(0,s) + %27\t%27 + v.substring(e);
-    t.selectionStart = t.selectionEnd = s+1; }
-  /* counters */
-  document.querySelector(%27%23cc%27).textContent=t.value.length;
-  document.querySelector(%27%23wc%27).textContent=t.value.replace(/\s+/g, %27 %27).split(%27 %27).length;
-  document.querySelector(%27%23lc%27).textContent=t.value.split(/\n/).length;
+    t.selectionStart = t.selectionEnd = s+1; }})(this);"
+  onkeyup = "(function(t){ /* counters */
+    document.querySelector(%27%23cc%27).textContent=t.value.length;
+    document.querySelector(%27%23wc%27).textContent=t.value.replace(/\s+/g, %27 %27).split(%27 %27).length;
+    document.querySelector(%27%23lc%27).textContent=t.value.split(/\n/).length;
   })(this);"&gt;&lt;/textarea&gt;
   &lt;footer&gt;
     &lt;span id=%27cc%27&gt;0&lt;/span&gt; chars |
