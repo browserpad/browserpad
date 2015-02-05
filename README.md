@@ -32,6 +32,7 @@ Hopefully these principles will prevent feature creep
 - [ ] auto-save (see [here](https://github.com/JakobKallin/Text-Editor/blob/gh-pages/index.html) and [here](https://github.com/samyk/evercookie))
 - [x] show statistics (lines/words/characters)
 - [ ] indent-deindent (with `Tab` / `Shift+Tab`)
+- [ ] keep selection visible (greyed out) when unfocused
 - [ ] menu entries (menu icon: [≡](http://www.fileformat.info/info/unicode/char/2261/browsertest.htm))
    - [ ] contrast (normal / night mode). (see icon [here](http://pixelmack.github.io/slight/))
    - [ ] permalink / share (via data url)
@@ -41,8 +42,11 @@ Hopefully these principles will prevent feature creep
             ([need to wait for FF 36](http://stackoverflow.com/questions/657795/how-remove-word-wrap-from-textarea/13446005#comment43835216_13446005))
    - [ ] highlight current line
    - [ ] text operations (on whole text or selection):
-      - [ ] case change
-      - [ ] regex search & replace
+      - [ ] case change (lower/upper/title)
+      - [ ] search & replace
+         - [ ] match highlight, emphasize current match, and cycling with F3
+         - [ ] one-by-one or bulk replace
+         - [ ] regex support
       - [ ] wrap-unwrap lines
 
 ### Possible advanced features:
