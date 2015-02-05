@@ -40,7 +40,7 @@ Hopefully these principles will prevent feature creep
       - [ ] wrap lines at specified CPL
             ([need to wait for FF 36](http://stackoverflow.com/questions/657795/how-remove-word-wrap-from-textarea/13446005#comment43835216_13446005))
    - [ ] highlight current line
-   - [ ] text operations:
+   - [ ] text operations (on whole text or selection):
       - [ ] case change
       - [ ] regex search & replace
       - [ ] wrap-unwrap lines
