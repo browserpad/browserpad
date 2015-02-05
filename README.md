@@ -29,18 +29,21 @@ Hopefully these principles will prevent feature creep
 
 ### Primary features:
 - [x] support tab key
-- [ ] normal / [solarized](https://waldyrious.neocities.org/ted_chiang/the-merchant-and-the-alchemists-gate.html) / night mode (see icon [here](http://pixelmack.github.io/slight/))
-- [ ] case change
-- [ ] indent-deindent
-- [ ] regex search & replace
-- [ ] wrap-unwrap lines
 - [ ] auto-save (see [here](https://github.com/JakobKallin/Text-Editor/blob/gh-pages/index.html) and [here](https://github.com/samyk/evercookie))
-- [ ] permalink / share (via data url)
-- [ ] [save to a file](http://pastebin.com/U8658H5c) ([custom filename](http://stackoverflow.com/q/283956/266309))
-- [x] statistics (lines/words/characters)
-- [ ] current line/column
-- [ ] line numbers
-- [ ] CPL (hard limit) and/or visual guide
+- [x] show statistics (lines/words/characters)
+- [ ] menu entries (menu icon: [≡](http://www.fileformat.info/info/unicode/char/2261/browsertest.htm))
+   - [ ] contrast (normal / night mode). (see icon [here](http://pixelmack.github.io/slight/))
+   - [ ] permalink / share (via data url)
+   - [ ] [save to a file](http://pastebin.com/U8658H5c) ([custom filename](http://stackoverflow.com/q/283956/266309))
+   - [ ] show visual guide at: 0/72/80 [CPL](https://en.wikipedia.org/wiki/Characters_per_line) (radio buttons)
+      - [ ] wrap lines at specified CPL
+            ([need to wait for FF 36](http://stackoverflow.com/questions/657795/how-remove-word-wrap-from-textarea/13446005#comment43835216_13446005))
+   - [ ] highlight current line
+   - [ ] text operations:
+      - [ ] case change
+      - [ ] indent-deindent
+      - [ ] regex search & replace
+      - [ ] wrap-unwrap lines
 
 ### Possible advanced features:
 - [ ] [smart tabs-to-spaces conversion](http://stackoverflow.com/a/2479925/266309)
