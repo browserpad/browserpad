@@ -31,6 +31,7 @@ Hopefully these principles will prevent feature creep
 - [x] support tab key
 - [ ] auto-save (see [here](https://github.com/JakobKallin/Text-Editor/blob/gh-pages/index.html) and [here](https://github.com/samyk/evercookie))
 - [x] show statistics (lines/words/characters)
+- [ ] indent-deindent (with `Tab` / `Shift+Tab`)
 - [ ] menu entries (menu icon: [≡](http://www.fileformat.info/info/unicode/char/2261/browsertest.htm))
    - [ ] contrast (normal / night mode). (see icon [here](http://pixelmack.github.io/slight/))
    - [ ] permalink / share (via data url)
@@ -41,7 +42,6 @@ Hopefully these principles will prevent feature creep
    - [ ] highlight current line
    - [ ] text operations:
       - [ ] case change
-      - [ ] indent-deindent
       - [ ] regex search & replace
       - [ ] wrap-unwrap lines
 
