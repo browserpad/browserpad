@@ -35,7 +35,7 @@ Hopefully these principles will prevent feature creep
 - [ ] auto-save (see [here](https://github.com/JakobKallin/Text-Editor/blob/gh-pages/index.html) and [here](https://github.com/samyk/evercookie))
 - [ ] permalink / share (via data url)
 - [ ] [save to a file](http://pastebin.com/U8658H5c) ([custom filename](http://stackoverflow.com/q/283956/266309))
-- [ ] statistics (lines/words/characters)
+- [x] statistics (lines/words/characters)
 - [ ] current line/column
 - [ ] line numbers
 - [ ] CPL (hard limit) and/or visual guide
