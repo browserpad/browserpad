@@ -10,7 +10,8 @@ It will also remain based on a data URI,
    so that the loading is instantaneous,
    and you can save it as a bookmark
    which will work in the browser even if you're offline.
-(This position may be revised in the interest of code readability.)
+(This position may be revised
+   in the interest of code readability/maintainability.)
 
 Hopefully these principles will prevent feature creep
    and keep the tool focused,
