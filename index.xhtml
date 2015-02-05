@@ -19,13 +19,23 @@
       line-height:1.5rem; padding:0 0.5em; background-color:%23eee; color:gray; font-family:monospace; }
   &lt;/style&gt;
   &lt;textarea autofocus placeholder="type here"
-  onkeydown = "(function(t){if(event.keyCode===9){
+  onkeydown = "(function(t){
+  /* tab key support */
+  if (event.keyCode===9) {
     event.preventDefault();
     var v = t.value, s = t.selectionStart, e = t.selectionEnd;
     t.value = v.substring(0,s) + %27\t%27 + v.substring(e);
-    t.selectionStart = t.selectionEnd = s+1;
-  }document.querySelector(%27%23wc%27).textContent=t.value.replace(/\s+/g, %27 %27).split(%27 %27).length})(this);"&gt;&lt;/textarea&gt;
-  &lt;footer&gt;X chars | &lt;span id=%27wc%27&gt;0&lt;/span&gt; words | Z lines&lt;/footer&gt;'>Browserpad</a></h1>
+    t.selectionStart = t.selectionEnd = s+1; }
+  /* counters */
+  document.querySelector(%27%23cc%27).textContent=t.value.length;
+  document.querySelector(%27%23wc%27).textContent=t.value.replace(/\s+/g, %27 %27).split(%27 %27).length;
+  document.querySelector(%27%23lc%27).textContent=t.value.split(/\n/).length;
+  })(this);"&gt;&lt;/textarea&gt;
+  &lt;footer&gt;
+    &lt;span id=%27cc%27&gt;0&lt;/span&gt; chars |
+    &lt;span id=%27wc%27&gt;0&lt;/span&gt; words |
+    &lt;span id=%27lc%27&gt;0&lt;/span&gt; lines
+  &lt;/footer&gt;'>Browserpad</a></h1>
   <p>For quick access, drag the link to your bookmark bar (or save it to your bookmark menu).</p>
   <p>Then you can click it whenever you need an instant text editor in the browser!</p>
   <p>(<a href="https://github.com/waldyrious/browserpad">source code on github</a>)</p>
