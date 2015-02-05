@@ -3,7 +3,8 @@
 A browser-based plain text editor entirely contained within a
    [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme).
    
-Browserpad will always be a **plain**text editor:
+Browserpad will always be a
+   **[plaintext](http://en.wikipedia.org/wiki/Text_editor#Plain_text_files_vs._word_processor_files)** editor:
    no markdown/html preview, no WYSIWIG, no rich text editing.
 
 It will also remain based on a data URI,
@@ -26,6 +27,7 @@ Hopefully these principles will prevent feature creep
 * Features:
     * [textmechanic.com](http://textmechanic.com)
     * [textop.us](http://wayback.archive.org/web/20130718231049id_/http://textop.us/) (defunct)
+    * [wikipedia](http://en.wikipedia.org/wiki/Text_editor#Typical_features)
 
 ### Primary features:
 - [x] support tab key
