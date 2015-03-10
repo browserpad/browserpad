@@ -20,7 +20,13 @@ Hopefully these principles will prevent feature creep
 
 ### Inspiration:
 * The concept was originally conceived by [@jjperezaguinaga](https://github.com/jjperezaguinaga)
-  on his post "[One line browser notepad](https://coderwall.com/p/lhsrcq/one-line-browser-notepad)".
+  on his 4 Dec 2012 post "[One line browser notepad](https://coderwall.com/p/lhsrcq/one-line-browser-notepad)".
+    * It appears that it had been previously uncovered by [@tabatkins](https://github.com/tabatkins),
+      as evidenced by [this 29 Jan 2012 tweet](https://twitter.com/paul_irish/status/163692631128424449)
+      by [@paulirish](https://github.com/paulirish).
+    * [This 9 December 2011 Hacker News comment](https://news.ycombinator.com/item?id=3333093)
+      by [@bytex64](https://github.com/bytex64) mentions a talk about HTML5 where this was presented
+    * I should contack @tabatkins and @bytex64 to investigate this further and get to the bottom of it.
 * Online plaintext editors (closed-source):
     * [mytextarea.com](http://mytextarea.com)
     * [editpad.org](http://editpad.org)
@@ -35,12 +41,14 @@ Hopefully these principles will prevent feature creep
 - [x] show statistics (lines/words/characters)
 - [ ] indent-deindent (with `Tab` / `Shift+Tab`)
 - [ ] keep selection visible (greyed out) when unfocused
+- [ ] use contents of first line as title
+      (see [here](http://iamnotagoodartist.com/web/an-auto-updating-data-uri-text-editor/))
 - [ ] menu entries (menu icon: [≡](http://www.fileformat.info/info/unicode/char/2261/browsertest.htm))
    - [ ] contrast (normal / night mode). (see icon [here](http://pixelmack.github.io/slight/))
-   - [ ] permalink / share (via data url)
-   - [ ] [save to a file](http://pastebin.com/U8658H5c)
-         ([custom filename](http://stackoverflow.com/q/283956/266309) /
-         [see also](http://caniuse.com/#feat=download))
+   - [ ] permalink / share ([via data url](http://iamnotagoodartist.com/web/an-auto-updating-data-uri-text-editor/))
+   - [x] save to a file
+         (using the [download attribute](http://stackoverflow.com/q/283956/266309) of the `a` element; 
+         [browser support for the download attribute](http://caniuse.com/#feat=download))
    - [ ] show visual guide at: 0/72/80 [CPL](https://en.wikipedia.org/wiki/Characters_per_line) (radio buttons)
       - [ ] wrap lines at specified CPL
             ([need to wait for FF 36](http://stackoverflow.com/questions/657795/how-remove-word-wrap-from-textarea/13446005#comment43835216_13446005))
