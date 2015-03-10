@@ -15,8 +15,9 @@
   &lt;style&gt;
     body { height:100%; box-sizing:border-box; margin:0; }
     textarea { width:100%; height:calc(100% - 1.5rem); border:none; outline:none; resize:none; padding:0.5em; }
-    footer { position:fixed; bottom:0; left:0; border-top:1px solid silver; width:100%; height:1.5rem;
+    footer { position:fixed; bottom:0; left:0; border-top:1px solid silver; width:100%; height:1.5rem; box-sizing:border-box;
       line-height:1.5rem; padding:0 0.5em; background-color:%23eee; color:gray; font-family:monospace; }
+    a%23save { float:right; text-decoration:none; }
     @media print { footer { display:none; } }
   &lt;/style&gt;
   &lt;textarea autofocus placeholder="type here"
@@ -31,9 +32,11 @@
     document.querySelector(%27%23lc%27).textContent=t.value.split(/\n/).length;
   })(this);"&gt;&lt;/textarea&gt;
   &lt;footer&gt;
-    &lt;span id=%27cc%27&gt;0&lt;/span&gt; chars |
-    &lt;span id=%27wc%27&gt;0&lt;/span&gt; words |
-    &lt;span id=%27lc%27&gt;0&lt;/span&gt; lines
+    &lt;span id="cc"&gt;0&lt;/span&gt; chars |
+    &lt;span id="wc"&gt;0&lt;/span&gt; words |
+    &lt;span id="lc"&gt;0&lt;/span&gt; lines
+    &lt;a id="save" href download="browserpad.txt"
+          onclick="this.href=%27data:text/plain;base64,%27+btoa(document.querySelector(%27textarea%27).value);"&gt;save&lt;/a&gt;
   &lt;/footer&gt;'>Browserpad</a></h1>
   <p>For quick access, drag the link to your bookmark bar (or save it to your bookmark menu).</p>
   <p>Then you can click it whenever you need an instant text editor in the browser!</p>
