@@ -53,7 +53,7 @@ Hopefully these principles will prevent feature creep
          [browser support for the download attribute](http://caniuse.com/#feat=download))
       - [ ] save as (custom filename)
    - [ ] show visual guide at: 0/72/80 [CPL](https://en.wikipedia.org/wiki/Characters_per_line) (radio buttons)
-      - [ ] wrap lines at specified CPL
+      - [ ] soft-wrap lines at specified CPL
             ([need to wait for FF 36](http://stackoverflow.com/questions/657795/how-remove-word-wrap-from-textarea/13446005#comment43835216_13446005))
    - [ ] highlight current line
    - [ ] text operations (on whole text or selection):
