@@ -43,12 +43,15 @@ Hopefully these principles will prevent feature creep
 - [ ] keep selection visible (greyed out) when unfocused
 - [ ] use contents of first line as title
       (see [here](http://iamnotagoodartist.com/web/an-auto-updating-data-uri-text-editor/))
+- [ ] warn before closing the page if textarea isn't empty and file hasn't been saved
+      (see example [here](http://www.editpad.org/javascript/warn.js))
 - [ ] menu entries (menu icon: [≡](http://www.fileformat.info/info/unicode/char/2261/browsertest.htm))
    - [ ] contrast (normal / night mode). (see icon [here](http://pixelmack.github.io/slight/))
    - [ ] permalink / share ([via data url](http://iamnotagoodartist.com/web/an-auto-updating-data-uri-text-editor/))
    - [x] save to a file
          (using the [download attribute](http://stackoverflow.com/q/283956/266309) of the `a` element; 
          [browser support for the download attribute](http://caniuse.com/#feat=download))
+      - [ ] save as (custom filename)
    - [ ] show visual guide at: 0/72/80 [CPL](https://en.wikipedia.org/wiki/Characters_per_line) (radio buttons)
       - [ ] wrap lines at specified CPL
             ([need to wait for FF 36](http://stackoverflow.com/questions/657795/how-remove-word-wrap-from-textarea/13446005#comment43835216_13446005))
