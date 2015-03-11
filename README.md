@@ -2,7 +2,8 @@
 
 A browser-based plain text editor entirely contained within a
    [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme):
-   http://browserpad.org
+
+> http://browserpad.org
    
 Browserpad will always be a
    **[plaintext](http://en.wikipedia.org/wiki/Text_editor#Plain_text_files_vs._word_processor_files)** editor:
@@ -20,14 +21,17 @@ Hopefully these principles will prevent feature creep
    the [Unix way](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming).
 
 ### Inspiration:
-* The concept was originally conceived by [@jjperezaguinaga](https://github.com/jjperezaguinaga)
+* The concept was originally decribed by [@jjperezaguinaga](https://github.com/jjperezaguinaga)
   on his 4 Dec 2012 post "[One line browser notepad](https://coderwall.com/p/lhsrcq/one-line-browser-notepad)".
     * It appears that it had been previously uncovered by [@tabatkins](https://github.com/tabatkins),
       as evidenced by [this 29 Jan 2012 tweet](https://twitter.com/paul_irish/status/163692631128424449)
       by [@paulirish](https://github.com/paulirish).
     * [This 9 December 2011 Hacker News comment](https://news.ycombinator.com/item?id=3333093)
       by [@bytex64](https://github.com/bytex64) mentions a talk about HTML5 where this was presented
-    * TODO: contact @tabatkins and @bytex64 to investigate this further and get to the bottom of it.
+    * TODO: contact @tabatkins and @bytex64 to investigate this further and get to the bottom of it
+      (although maybe this may be irrelevant if we abandon the Data URI concept,
+      not to mention it is definitely not small anymore;
+      but it may still be nice to have the origins of browserpad documented).
 * Online plaintext editors (closed-source):
     * [mytextarea.com](http://mytextarea.com)
     * [editpad.org](http://editpad.org)
