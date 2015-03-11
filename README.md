@@ -1,7 +1,8 @@
-# Browserpad ([live demo](http://waldyrious.github.io/browserpad))
+# browserpad
 
 A browser-based plain text editor entirely contained within a
-   [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme).
+   [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme):
+   http://browserpad.org
    
 Browserpad will always be a
    **[plaintext](http://en.wikipedia.org/wiki/Text_editor#Plain_text_files_vs._word_processor_files)** editor:
@@ -26,7 +27,7 @@ Hopefully these principles will prevent feature creep
       by [@paulirish](https://github.com/paulirish).
     * [This 9 December 2011 Hacker News comment](https://news.ycombinator.com/item?id=3333093)
       by [@bytex64](https://github.com/bytex64) mentions a talk about HTML5 where this was presented
-    * I should contack @tabatkins and @bytex64 to investigate this further and get to the bottom of it.
+    * TODO: contact @tabatkins and @bytex64 to investigate this further and get to the bottom of it.
 * Online plaintext editors (closed-source):
     * [mytextarea.com](http://mytextarea.com)
     * [editpad.org](http://editpad.org)
