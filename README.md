@@ -36,6 +36,11 @@ Hopefully these principles will prevent feature creep
     * [wikipedia](http://en.wikipedia.org/wiki/Text_editor#Typical_features)
 
 ### Primary features:
+> Note: As a rule of thumb, browserpad aims to support only editing operations that are generic and content-agnostic.
+> This means it won't implement any context-sensitive functions that depend on the semantic meaning of the text,
+> such as bracket matching, code highlighting / linting / beautifying,
+> [semantic linebreaks](http://rhodesmill.org/brandon/2012/one-sentence-per-line/), etc.
+
 - [x] support tab key
 - [ ] auto-save (see [here](https://github.com/JakobKallin/Text-Editor/blob/gh-pages/index.html) and [here](https://github.com/samyk/evercookie))
 - [x] show statistics (lines/words/characters)
@@ -67,6 +72,4 @@ Hopefully these principles will prevent feature creep
 ### Possible advanced features:
 - [ ] [smart tabs-to-spaces conversion](http://stackoverflow.com/a/2479925/266309)
 - [ ] [elastic tabstops](http://nickgravgaard.com/elastictabstops/)
-- [ ] [semantic linebreaks](http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
-- [ ] auto-code formatting, a la [jsbeautifier](http://jsbeautifier.org)
 - [ ] sync across machines
