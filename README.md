@@ -62,6 +62,7 @@ Hopefully these principles will prevent feature creep
          (using the [download attribute](http://stackoverflow.com/q/283956/266309) of the `a` element; 
          [browser support for the download attribute](http://caniuse.com/#feat=download))
       - [ ] save as (custom filename)
+   - [ ] load from a file on disk
    - [ ] show visual guide at: 0/72/80 [CPL](https://en.wikipedia.org/wiki/Characters_per_line) (radio buttons)
       - [ ] soft-wrap lines at specified CPL
             ([need to wait for FF 36](http://stackoverflow.com/questions/657795/how-remove-word-wrap-from-textarea/13446005#comment43835216_13446005))
@@ -78,3 +79,4 @@ Hopefully these principles will prevent feature creep
 - [ ] [smart tabs-to-spaces conversion](http://stackoverflow.com/a/2479925/266309)
 - [ ] [elastic tabstops](http://nickgravgaard.com/elastictabstops/)
 - [ ] sync across machines
+- [ ] split window (different views of the same document (or maybe two separate documents?...)
