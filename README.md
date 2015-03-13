@@ -84,10 +84,10 @@ Hopefully these principles will prevent feature creep
 ## License
 
 Browserpad is open source software released under the
-[ISC License](http://opensource.org/licenses/ISC):
+**[ISC License](http://opensource.org/licenses/ISC)**:
 
-> Copyright (c) 2015 Waldir Pimenta <waldyrious@gmail.com>
-> and [contributors](https://github.com/browserpad/browserpad/contributors)-
+> Copyright (C) 2015 Waldir Pimenta
+> and [contributors](https://github.com/browserpad/browserpad/contributors)
 >
 > Permission to use, copy, modify, and/or distribute this software
 > for any purpose with or without fee is hereby granted,
