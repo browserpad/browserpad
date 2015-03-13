@@ -1,4 +1,4 @@
-# browserpad
+# Browserpad
 
 A browser-based plain text editor entirely contained within a
    [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme):
@@ -14,7 +14,7 @@ It will also remain based on a data URI,
    and you can save it as a bookmark
    which will work in the browser even if you're offline.
 (This position may be revised
-   in the interest of code readability/maintainability.)
+   in the interest of code readability/maintainability -- see issue #2)
 
 Hopefully these principles will prevent feature creep
    and keep the tool focused,
@@ -31,7 +31,7 @@ Hopefully these principles will prevent feature creep
     * TODO: contact @tabatkins and @bytex64 to investigate this further and get to the bottom of it
       (although maybe this may be irrelevant if we abandon the Data URI concept,
       not to mention it is definitely not small anymore;
-      but it may still be nice to have the origins of browserpad documented).
+      but it may still be nice to have the origins of Browserpad documented).
 * Online plaintext editors (closed-source):
     * [mytextarea.com](http://mytextarea.com)
     * [editpad.org](http://editpad.org)
@@ -41,7 +41,7 @@ Hopefully these principles will prevent feature creep
     * [wikipedia](http://en.wikipedia.org/wiki/Text_editor#Typical_features)
 
 ### Primary features:
-> Note: As a rule of thumb, browserpad aims to support only editing operations that are generic and content-agnostic.
+> Note: As a rule of thumb, Browserpad aims to support only editing operations that are generic and content-agnostic.
 > This means it won't implement any context-sensitive functions that depend on the semantic meaning of the text,
 > such as bracket matching, code highlighting / linting / beautifying,
 > [semantic linebreaks](http://rhodesmill.org/brandon/2012/one-sentence-per-line/), etc.
@@ -87,7 +87,7 @@ Browserpad is open source software released under the
 **[ISC License](http://opensource.org/licenses/ISC)**:
 
 > Copyright (C) 2015 Waldir Pimenta
-> and [contributors](https://github.com/browserpad/browserpad/contributors)
+> and [contributors](https://github.com/Browserpad/browserpad/contributors)
 >
 > Permission to use, copy, modify, and/or distribute this software
 > for any purpose with or without fee is hereby granted,
