@@ -41,7 +41,7 @@
     &lt;span id="wc"&gt;0&lt;/span&gt; words |
     &lt;span id="lc"&gt;0&lt;/span&gt; lines
     &lt;a id="save" href download="browserpad.txt"
-          onclick="this.href=%27data:text/plain;base64,%27+btoa(document.querySelector(%27textarea%27).value);"&gt;save&lt;/a&gt;
+          onclick="this.href=%27data:text/plain;base64,%27+btoa(unescape(encodeURIComponent(document.querySelector(%27textarea%27).value)));"&gt;save&lt;/a&gt;
   &lt;/footer&gt;'>text editor</a></h2>
   <p>For quick access, you can drag the link to your bookmark bar (or save it to your bookmark menu).</p>
   <p>Then you can click it whenever you need an instant text editor in the browser!</p>
