@@ -61,7 +61,7 @@ Hopefully these principles will prevent feature creep
    - [x] save to a file
          (using the [download attribute](http://stackoverflow.com/q/283956/266309) of the `a` element; 
          [browser support for the download attribute](http://caniuse.com/#feat=download))
-      - [ ] save as (custom filename)
+      - [ ] save as (custom filename). cf. [this implementation of load & save](https://github.com/waldyrious/notepad/blob/gh-pages/src/js/listeners.js#L8-L24)
    - [ ] load from a file on disk
    - [ ] show visual guide at: 0/72/80 [CPL](https://en.wikipedia.org/wiki/Characters_per_line) (radio buttons)
       - [ ] soft-wrap lines at specified CPL
