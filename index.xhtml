@@ -5,46 +5,52 @@
   <title>Browserpad - A notepad in the browser</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,R0lGODlhEAAQAKEAAAAAAICAgP///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hFDcmVhdGVkIHdpdGggR0lNUAAh+QQBZAADACwAAAAAEAAQAAACJIyPacLtvp5kEUwYmL00i81VXKeNgjiioQdeqsuakXl6tIIjBQAh+QQBZAADACwAAAAAEAAQAAACIIyPacLtvp5kcb5qG85iZ2+BkyiRV8BBaEqtrKkqslEAADs=" />
   <style>
-    body { font-family: 'Liberation Sans', sans-serif; text-align: center; }
-    a { color: RoyalBlue; }
-  </style>
-</head>
-<body>
-  <h1>Browserpad</h1>
-  <p>As the name indicates, Browserpad is a notepad in the browser.</p>
-  <p>It is a plain text editor entirely contained within a
-  <a href="https://en.wikipedia.org/wiki/Data_URI_scheme">data URI</a>.</p>
-  <p>Click the link below to try it right now:</p>
-  <h2><a href='data:text/html;charset=utf-8,
-  &lt;title&gt;Browserpad&lt;/title&gt;
-  &lt;style&gt;
     body { height:100%; box-sizing:border-box; margin:0; }
     textarea { width:100%; height:calc(100% - 1.5rem); border:none; outline:none; resize:none; padding:0.5em; }
-    footer { position:fixed; bottom:0; left:0; border-top:1px solid silver; width:100%; height:1.5rem; box-sizing:border-box;
-      line-height:1.5rem; padding:0 0.5em; background-color:%23eee; color:gray; font-family:monospace; }
-    a%23save { float:right; text-decoration:none; }
-    @media print { footer { display:none; } }
-  &lt;/style&gt;
-  &lt;textarea autofocus placeholder="type here"
-  onkeydown = "(function(t){if(event.keyCode===9){ /* tab key support */
-    event.preventDefault();
-    var v = t.value, s = t.selectionStart, e = t.selectionEnd;
-    t.value = v.substring(0,s) + %27\t%27 + v.substring(e);
-    t.selectionStart = t.selectionEnd = s+1; }})(this);"
-  onkeyup = "(function(t){ /* counters */
-    document.querySelector(%27%23cc%27).textContent=t.value.length;
-    document.querySelector(%27%23wc%27).textContent=t.value.replace(/\s+/g, %27 %27).split(%27 %27).length;
-    document.querySelector(%27%23lc%27).textContent=t.value.split(/\n/).length;
-  })(this);"&gt;&lt;/textarea&gt;
-  &lt;footer&gt;
-    &lt;span id="cc"&gt;0&lt;/span&gt; chars |
-    &lt;span id="wc"&gt;0&lt;/span&gt; words |
-    &lt;span id="lc"&gt;0&lt;/span&gt; lines
-    &lt;a id="save" href download="browserpad.txt"
-          onclick="this.href=%27data:text/plain;base64,%27+btoa(unescape(encodeURIComponent(document.querySelector(%27textarea%27).value)));"&gt;save&lt;/a&gt;
-  &lt;/footer&gt;'>text editor</a></h2>
-  <p>For quick access, you can drag the link to your bookmark bar (or save it to your bookmark menu).</p>
-  <p>Then you can click it whenever you need an instant text editor in the browser!</p>
-  <p>(<a href="https://github.com/Browserpad/browserpad">source code on github</a>)</p>
+    nav {
+      position:fixed; bottom:0; left:0;
+      box-sizing:border-box; width:100%; height:1.5rem; padding:0 0.5em;
+      background-color:#eee; border-top:1px solid silver;
+      line-height:1.5rem; color:gray; font-family:monospace; }
+    a#save { float:right; text-decoration:none; }
+    @media print { nav { display:none; } }
+    #about { display:none; }
+  </style>
+  <script>
+    var txtbox = document.querySelector("textarea");
+    // tab key support
+    txtbox.onkeydown = function(){
+      if(event.keyCode===9){
+        event.preventDefault();
+        var text = this.value, s = this.selectionStart, e = this.selectionEnd;
+        this.value = text.substring(0,s) + '\t' + text.substring(e);
+        this.selectionStart = this.selectionEnd = s+1;
+      }
+    };
+    // counters
+    txtbox.onkeyup = function(){
+      document.querySelector('#cc').textContent = this.value.length;
+      document.querySelector('#wc').textContent = this.value.replace(/\s+/g, ' ').split(' ').length;
+      document.querySelector('#lc').textContent = this.value.split(/\n/).length;
+    };
+  </script>
+</head>
+<body>
+  <textarea autofocus placeholder="type here"></textarea>
+  <nav>
+    <span id="stats">
+      <span id="cc">0</span> chars |
+      <span id="wc">0</span> words |
+      <span id="lc">0</span> lines
+    </span>
+    <a id="save" href download="browserpad.txt"
+       onclick="this.href = 'data:text/plain;base64,' + btoa(unescape(encodeURIComponent(document.querySelector('textarea').value)));">save</a>
+  </nav>
+  <div id="about">
+    <h2>Browserpad</h2>
+    <p>As the name indicates, Browserpad is a notepad in the browser.</p>
+    <p>It is a plain text editor built entirely with HTML, CSS and JavaScript.</p>
+    <p>(<a href="https://github.com/Browserpad/browserpad">source code available on github</a>)</p>
+  </div>
 </body>
 </html>

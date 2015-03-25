@@ -1,7 +1,6 @@
 # Browserpad
 
-A browser-based plain text editor entirely contained within a
-   [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme):
+A browser-based plain text editor built entirely with HTML, CSS and JavaScript:
 
 > http://browserpad.org
    
@@ -9,14 +8,7 @@ Browserpad will always be a
    **[plaintext](http://en.wikipedia.org/wiki/Text_editor#Plain_text_files_vs._word_processor_files)** editor:
    no markdown/html preview, no WYSIWIG, no rich text editing.
 
-It will also remain based on a data URI,
-   so that the loading is instantaneous,
-   and you can save it as a bookmark
-   which will work in the browser even if you're offline.
-(This position may be revised
-   in the interest of code readability/maintainability -- see issue #2)
-
-Hopefully these principles will prevent feature creep
+Hopefully this guiding principle will prevent feature creep
    and keep the tool focused,
    the [Unix way](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming).
 
