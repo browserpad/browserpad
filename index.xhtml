@@ -36,14 +36,14 @@
   </script>
 </head>
 <body>
-  <textarea autofocus placeholder="type here"></textarea>
+  <textarea autofocus="autofocus" placeholder="type here"></textarea>
   <nav>
     <span id="stats">
       <span id="cc">0</span> chars |
       <span id="wc">0</span> words |
       <span id="lc">0</span> lines
     </span>
-    <a id="save" href download="browserpad.txt"
+    <a id="save" href="" download="browserpad.txt"
        onclick="this.href = 'data:text/plain;base64,' + btoa(unescape(encodeURIComponent(document.querySelector('textarea').value)));">save</a>
   </nav>
   <div id="about">
