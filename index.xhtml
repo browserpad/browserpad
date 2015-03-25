@@ -3,10 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <title>Browserpad - A notepad in the browser</title>
-  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,R0lGODlhEAAQAKEAAAAAAICAgP///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hFDcmVhdGVkIHdpdGggR0lNUAAh+QQBZAADACwAAAAAEAAQAAACJIyPacLtvp5kEUwYmL00i81VXKeNgjiioQdeqsuakXl6tIIjBQAh+QQBZAADACwAAAAAEAAQAAACIIyPacLtvp5kcb5qG85iZ2+BkyiRV8BBaEqtrKkqslEAADs=" />
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,R0lGODlhEAAQAKEAAAAAAICAgP///wAAACH/
+    C05FVFNDQVBFMi4wAwEAAAAh/hFDcmVhdGVkIHdpdGggR0lNUAAh+QQBZAADACwAAAAAEAAQAAACJIyPacLtvp5kEUwYmL00i81VXK
+    eNgjiioQdeqsuakXl6tIIjBQAh+QQBZAADACwAAAAAEAAQAAACIIyPacLtvp5kcb5qG85iZ2+BkyiRV8BBaEqtrKkqslEAADs=" />
   <style>
     body { height:100%; box-sizing:border-box; margin:0; }
-    textarea { width:100%; height:calc(100% - 1.5rem); border:none; outline:none; resize:none; padding:0.5em; }
+    textarea {
+      width:100%; height:calc(100% - 1.5rem);
+      padding:0.5em; box-sizing:border-box;
+      border:none; outline:none; resize:none; }
     nav {
       position:fixed; bottom:0; left:0;
       box-sizing:border-box; width:100%; height:1.5rem; padding:0 0.5em;
@@ -21,12 +26,11 @@
   <textarea autofocus="autofocus" placeholder="type here"></textarea>
   <nav>
     <span id="stats">
-      <span id="cc">0</span> chars |
-      <span id="wc">0</span> words |
-      <span id="lc">0</span> lines
+      <span id="charCount">0</span> chars |
+      <span id="wordCount">0</span> words |
+      <span id="lineCount">0</span> lines
     </span>
-    <a id="save" href="" download="browserpad.txt"
-       onclick="this.href = 'data:text/plain;base64,' + btoa(unescape(encodeURIComponent(document.querySelector('textarea').value)));">save</a>
+    <a id="save" href="#" download="browserpad.txt">save</a>
   </nav>
   <div id="about">
     <h2>Browserpad</h2>
@@ -47,10 +51,15 @@
     };
     // counters
     txtbox.onkeyup = function(){
-      document.querySelector('#cc').textContent = this.value.length;
-      document.querySelector('#wc').textContent = this.value.replace(/\s+/g, ' ').split(' ').length;
-      document.querySelector('#lc').textContent = this.value.split(/\n/).length;
+      document.querySelector('#charCount').textContent = this.value.length;
+      document.querySelector('#wordCount').textContent = this.value.replace(/\s+/g, ' ').split(' ').length;
+      document.querySelector('#lineCount').textContent = this.value.split(/\n/).length;
     };
+    // save
+    document.querySelector("#save").onclick = function(){
+      var encodedContent = btoa(unescape(encodeURIComponent(document.querySelector('textarea').value)));
+      this.href = 'data:text/plain;base64,' + encodedContent;
+    }
   </script>
 </body>
 </html>
