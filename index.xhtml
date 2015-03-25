@@ -56,7 +56,7 @@
     window.beforeunload = storeLocally;
     
     // tab key support
-    txtbox.onkeydown = function () {
+    txtbox.onkeydown = function (event) {
       if (event.keyCode === 9) {
         event.preventDefault();
         var text = this.value, s = this.selectionStart, e = this.selectionEnd;
