@@ -48,15 +48,15 @@
   </div>
   <script>
     var txtbox = document.querySelector('textarea');
+    var timeoutID = null;
     
     // load/save cache in local storage
     txtbox.value = localStorage.getItem('browserpad') || '';
     function storeLocally() { localStorage.setItem('browserpad', txtbox.value); }
-    setTimeout(storeLocally, 1000);
     window.beforeunload = storeLocally;
     
     // tab key support
-    txtbox.onkeydown = function (event) {
+    txtbox.onkeypress = function (event) {
       if (event.keyCode === 9) {
         event.preventDefault();
         var text = this.value, s = this.selectionStart, e = this.selectionEnd;
@@ -70,6 +70,8 @@
       document.querySelector('#char-count').textContent = this.value.length;
       document.querySelector('#word-count').textContent = this.value.replace(/\s+/g, ' ').split(' ').length;
       document.querySelector('#line-count').textContent = this.value.split(/\n/).length;
+      window.clearTimeout(timeoutID); // prevent saving too frequently
+      timeoutID = window.setTimeout(storeLocally, 1000);
     };
     
     // save as file
