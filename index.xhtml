@@ -7,28 +7,36 @@
     C05FVFNDQVBFMi4wAwEAAAAh/hFDcmVhdGVkIHdpdGggR0lNUAAh+QQBZAADACwAAAAAEAAQAAACJIyPacLtvp5kEUwYmL00i81VXK
     eNgjiioQdeqsuakXl6tIIjBQAh+QQBZAADACwAAAAAEAAQAAACIIyPacLtvp5kcb5qG85iZ2+BkyiRV8BBaEqtrKkqslEAADs=" />
   <style>
-    html, body { height:100%; box-sizing:border-box; margin:0; }
+    html, body {
+      height:100%; box-sizing:border-box; margin:0;
+    }
     textarea {
       width:100%; height:calc(100% - 1.5rem);
       padding:0.5em; box-sizing:border-box;
-      border:none; outline:none; resize:none; }
+      border:none; outline:none; resize:none;
+    }
     nav {
       position:fixed; bottom:0; left:0;
       box-sizing:border-box; width:100%; height:1.5rem; padding:0 0.5em;
       background-color:#eee; border-top:1px solid silver;
-      line-height:1.5rem; color:gray; font-family:monospace; }
-    a#save { float:right; text-decoration:none; }
+      line-height:1.5rem; color:gray; font-family:monospace;
+    }
+    #save {
+      float:right; text-decoration:none;
+    }
+    #about {
+      display:none;
+    }
     @media print { nav { display:none; } }
-    #about { display:none; }
   </style>
 </head>
 <body>
   <textarea autofocus="autofocus" placeholder="type here"></textarea>
   <nav>
     <span id="stats">
-      <span id="charCount">0</span> chars |
-      <span id="wordCount">0</span> words |
-      <span id="lineCount">0</span> lines
+      <span id="char-count">0</span> chars |
+      <span id="word-count">0</span> words |
+      <span id="line-count">0</span> lines
     </span>
     <a id="save" href="#" download="browserpad.txt">save</a>
   </nav>
@@ -43,32 +51,32 @@
     
     // load/save cache in local storage
     txtbox.value = localStorage.getItem('browserpad') || '';
+    function storeLocally() { localStorage.setItem('browserpad', txtbox.value); }
     setTimeout(storeLocally, 1000);
     window.beforeunload = storeLocally;
-    function storeLocally() { localStorage.setItem('browserpad', txtbox.value); }
     
     // tab key support
-    txtbox.onkeydown = function(){
-      if(event.keyCode===9){
+    txtbox.onkeydown = function () {
+      if (event.keyCode === 9) {
         event.preventDefault();
         var text = this.value, s = this.selectionStart, e = this.selectionEnd;
-        this.value = text.substring(0,s) + '\t' + text.substring(e);
-        this.selectionStart = this.selectionEnd = s+1;
+        this.value = text.substring(0, s) + '\t' + text.substring(e);
+        this.selectionStart = this.selectionEnd = s + 1;
       }
     };
     
     // counters
-    txtbox.onkeyup = function(){
-      document.querySelector('#charCount').textContent = this.value.length;
-      document.querySelector('#wordCount').textContent = this.value.replace(/\s+/g, ' ').split(' ').length;
-      document.querySelector('#lineCount').textContent = this.value.split(/\n/).length;
+    txtbox.onkeyup = function () {
+      document.querySelector('#char-count').textContent = this.value.length;
+      document.querySelector('#word-count').textContent = this.value.replace(/\s+/g, ' ').split(' ').length;
+      document.querySelector('#line-count').textContent = this.value.split(/\n/).length;
     };
     
     // save as file
-    document.querySelector('#save').onclick = function(){
-      var encodedContent = btoa(unescape(encodeURIComponent(document.querySelector('textarea').value)));
+    document.querySelector('#save').onclick = function () {
+      var encodedContent = window.btoa(window.unescape(encodeURIComponent(document.querySelector('textarea').value)));
       this.href = 'data:text/plain;base64,' + encodedContent;
-    }
+    };
   </script>
 </body>
 </html>
