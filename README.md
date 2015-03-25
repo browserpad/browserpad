@@ -39,7 +39,7 @@ Hopefully this guiding principle will prevent feature creep
 > [semantic linebreaks](http://rhodesmill.org/brandon/2012/one-sentence-per-line/), etc.
 
 - [x] support tab key
-- [ ] auto-save (see [here](https://github.com/JakobKallin/Text-Editor/blob/gh-pages/index.html) and [here](https://github.com/samyk/evercookie))
+- [x] auto-save using `localStorage` (see [here](https://github.com/JakobKallin/Text-Editor/blob/gh-pages/index.html))
 - [x] show statistics (lines/words/characters)
 - [ ] indent-deindent (with `Tab` / `Shift+Tab`)
 - [ ] keep selection visible (greyed out) when unfocused
