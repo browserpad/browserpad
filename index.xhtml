@@ -52,6 +52,7 @@
     
     // load/save cache in local storage
     txtbox.value = localStorage.getItem('browserpad') || '';
+    txtbox.setSelectionRange(txtbox.value.length, txtbox.value.length); // place caret at end of content
     function storeLocally() { localStorage.setItem('browserpad', txtbox.value); }
     window.beforeunload = storeLocally;
     
