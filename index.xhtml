@@ -16,24 +16,6 @@
     @media print { nav { display:none; } }
     #about { display:none; }
   </style>
-  <script>
-    var txtbox = document.querySelector("textarea");
-    // tab key support
-    txtbox.onkeydown = function(){
-      if(event.keyCode===9){
-        event.preventDefault();
-        var text = this.value, s = this.selectionStart, e = this.selectionEnd;
-        this.value = text.substring(0,s) + '\t' + text.substring(e);
-        this.selectionStart = this.selectionEnd = s+1;
-      }
-    };
-    // counters
-    txtbox.onkeyup = function(){
-      document.querySelector('#cc').textContent = this.value.length;
-      document.querySelector('#wc').textContent = this.value.replace(/\s+/g, ' ').split(' ').length;
-      document.querySelector('#lc').textContent = this.value.split(/\n/).length;
-    };
-  </script>
 </head>
 <body>
   <textarea autofocus="autofocus" placeholder="type here"></textarea>
@@ -52,5 +34,23 @@
     <p>It is a plain text editor built entirely with HTML, CSS and JavaScript.</p>
     <p>(<a href="https://github.com/Browserpad/browserpad">source code available on github</a>)</p>
   </div>
+  <script>
+    var txtbox = document.querySelector("textarea");
+    // tab key support
+    txtbox.onkeydown = function(){
+      if(event.keyCode===9){
+        event.preventDefault();
+        var text = this.value, s = this.selectionStart, e = this.selectionEnd;
+        this.value = text.substring(0,s) + '\t' + text.substring(e);
+        this.selectionStart = this.selectionEnd = s+1;
+      }
+    };
+    // counters
+    txtbox.onkeyup = function(){
+      document.querySelector('#cc').textContent = this.value.length;
+      document.querySelector('#wc').textContent = this.value.replace(/\s+/g, ' ').split(' ').length;
+      document.querySelector('#lc').textContent = this.value.split(/\n/).length;
+    };
+  </script>
 </body>
 </html>
