@@ -15,8 +15,9 @@ The aim of this guiding principle is to prevent feature creep
    do one thing, and do it well.
 
 ### Inspiration:
-* Browserpad started up as a data URI-contained "notepad", `data:text/html,<textarea autofocus/>` --
-  a concept was originally decribed by [@jjperezaguinaga](https://github.com/jjperezaguinaga)
+* Browserpad [started up](https://github.com/browserpad/browserpad/commit/d71b37b)
+  as a data URI-contained "notepad": `data:text/html,<textarea autofocus/>`.
+  This concept was originally decribed by [@jjperezaguinaga](https://github.com/jjperezaguinaga)
   on his 4 Dec 2012 post "[One line browser notepad](https://coderwall.com/p/lhsrcq/one-line-browser-notepad)".
     * Actually, it appears that it had been previously uncovered by [@tabatkins](https://github.com/tabatkins),
       as evidenced by [this 29 Jan 2012 tweet](https://twitter.com/paul_irish/status/163692631128424449)
