@@ -14,9 +14,12 @@ The aim of this guiding principle is to prevent feature creep
    the [Unix way](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming):
    do one thing, and do it well.
 
-### Inspiration:
-* Browserpad [started up](https://github.com/browserpad/browserpad/commit/d71b37b)
-  as a data URI-contained browser "notepad": `data:text/html,<textarea autofocus/>`.
+### Origins / inspiration:
+* Browserpad [started](https://github.com/browserpad/browserpad/commit/d71b37b)
+  [up](https://github.com/browserpad/browserpad/commit/324ef38)
+  as a very simple browser notepad entirely contained in a data URI:
+  `data:text/html,<textarea autofocus style='width:100%;height:100%;border:none;outline:none'/>`
+  (try copying and pasting that to your browser address bar and pressing enter).
   This concept was originally decribed by [@jjperezaguinaga](https://github.com/jjperezaguinaga)
   on his 4 Dec 2012 post "[One line browser notepad](https://coderwall.com/p/lhsrcq/one-line-browser-notepad)".
     * Actually, it appears that it had been previously uncovered by [@tabatkins](https://github.com/tabatkins),
@@ -28,6 +31,9 @@ The aim of this guiding principle is to prevent feature creep
       (although maybe this may be irrelevant if we abandon the Data URI concept,
       not to mention it is definitely not small anymore;
       but it may still be nice to have the origins of Browserpad documented).
+* The data URI approach was neat, but impractical,
+  and was [eventually abandoned](https://github.com/browserpad/browserpad/issues/2)
+  in favor of the regular html file approach.
 * Browserpad is heavily inspired by the existing (but proprietary) online plaintext editors:
     * [mytextarea.com](http://mytextarea.com)
     * [editpad.org](http://editpad.org)
