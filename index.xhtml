@@ -11,18 +11,21 @@
       height:100%; box-sizing:border-box; margin:0;
     }
     textarea {
-      width:100%; height:calc(100% - 1.5rem);
+      width:100%; height:calc(100% - 2rem);
       padding:0.5em; box-sizing:border-box;
       border:none; outline:none; resize:none;
     }
     nav {
       position:fixed; bottom:0; left:0;
-      box-sizing:border-box; width:100%; height:1.5rem; padding:0 0.5em;
+      box-sizing:border-box; width:100%; height:2rem; padding:0 0.5em;
       background-color:#eee; border-top:1px solid silver;
-      line-height:1.5rem; color:gray; font-family:monospace;
+      line-height:2rem; color:gray; font-family:monospace;
     }
     #save {
-      float:right; text-decoration:none;
+      float:right;
+    }
+    #save a {
+      text-decoration:none;
     }
     #about {
       display:none;
@@ -38,7 +41,10 @@
       <span id="word-count">0</span> words |
       <span id="line-count">0</span> lines
     </span>
-    <a id="save" href="#" download="browserpad.txt">save</a>
+    <span id="save">
+      <input id="filename" placeholder="browserpad.txt"/>
+      <a href="#">save</a>
+    </span>
   </nav>
   <div id="about">
     <h2>Browserpad</h2>
@@ -76,7 +82,8 @@
     };
     
     // save as file
-    document.querySelector('#save').onclick = function () {
+    document.querySelector('#save a').onclick = function () {
+      this.download = (document.querySelector('#filename').value || 'browserpad.txt').replace(/^([^.]*)$/, "$1.txt");
       this.href = URL.createObjectURL(new Blob([document.querySelector('textarea').value], {type: 'text/plain'}));
     };
   </script>
