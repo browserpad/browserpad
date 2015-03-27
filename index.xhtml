@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <title>Browserpad - A notepad in the browser</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,R0lGODlhEAAQAKEAAAAAAICAgP///wAAACH/
     C05FVFNDQVBFMi4wAwEAAAAh/hFDcmVhdGVkIHdpdGggR0lNUAAh+QQBZAADACwAAAAAEAAQAAACJIyPacLtvp5kEUwYmL00i81VXK
-    eNgjiioQdeqsuakXl6tIIjBQAh+QQBZAADACwAAAAAEAAQAAACIIyPacLtvp5kcb5qG85iZ2+BkyiRV8BBaEqtrKkqslEAADs=" />
+    eNgjiioQdeqsuakXl6tIIjBQAh+QQBZAADACwAAAAAEAAQAAACIIyPacLtvp5kcb5qG85iZ2+BkyiRV8BBaEqtrKkqslEAADs="/>
   <style>
     html, body {
       height:100%; box-sizing:border-box; margin:0;
@@ -42,8 +42,8 @@
       <span id="line-count">0</span> lines
     </span>
     <span id="controls">
-      <input type="checkbox" id="spellcheck"/> |
-      <label for="spellcheck">spell-checking</label>
+      <input type="checkbox" id="spellcheck"/>
+      <label for="spellcheck">spell-checking</label> |
       <span id="open">
         <input type="file" value="open"/>
         <a href="#">open</a>
@@ -114,6 +114,7 @@
     document.querySelector('#spellcheck').onchange = function () {
       textbox.spellcheck = this.checked;
     };
+    textbox.spellcheck = document.querySelector('#spellcheck').checked; // initialize
   </script>
 </body>
 </html>
