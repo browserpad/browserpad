@@ -77,8 +77,7 @@
     
     // save as file
     document.querySelector('#save').onclick = function () {
-      var encodedContent = window.btoa(window.unescape(encodeURIComponent(document.querySelector('textarea').value)));
-      this.href = 'data:text/plain;base64,' + encodedContent;
+      this.href = URL.createObjectURL(new Blob([document.querySelector('textarea').value], {type: 'text/plain'}));
     };
   </script>
 </body>
