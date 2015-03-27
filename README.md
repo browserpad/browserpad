@@ -52,7 +52,7 @@ The aim of this guiding principle is to prevent feature creep
 - [x] show statistics (lines/words/characters)
 - [ ] indent-deindent (with `Tab` / `Shift+Tab`)
 - [ ] keep selection visible (greyed out) when unfocused
-- [ ] use contents of first line as title
+- [ ] use contents of first line (or filename, if defined) as title
       (see [here](http://iamnotagoodartist.com/web/an-auto-updating-data-uri-text-editor/))
 - [ ] menu entries (menu icon: [≡](http://www.fileformat.info/info/unicode/char/2261/browsertest.htm))
    - [ ] contrast (normal / night mode). (see icon [here](http://pixelmack.github.io/slight/))
@@ -60,8 +60,8 @@ The aim of this guiding principle is to prevent feature creep
    - [x] save to a file
          (using the [download attribute](http://stackoverflow.com/q/283956/266309) of the `a` element; 
          [browser support for the download attribute](http://caniuse.com/#feat=download))
-      - [ ] save as (custom filename). cf. [this implementation of load & save](https://github.com/waldyrious/notepad/blob/gh-pages/src/js/listeners.js#L8-L24)
-   - [ ] load from a file on disk
+      - [x] save as (custom filename).
+   - [x] load from a file on disk (based on [this implementation](https://github.com/itsapi/notepad))
    - [ ] show visual guide at: 0/72/80 [CPL](https://en.wikipedia.org/wiki/Characters_per_line) (radio buttons)
       - [ ] soft-wrap lines at specified CPL
             ([need to wait for FF 36](http://stackoverflow.com/questions/657795/how-remove-word-wrap-from-textarea/13446005#comment43835216_13446005))
