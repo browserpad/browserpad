@@ -59,18 +59,18 @@
     <p>(<a href="https://github.com/Browserpad/browserpad">source code available on github</a>)</p>
   </div>
   <script>
-    var txtbox = document.querySelector('textarea');
+    var textbox = document.querySelector('textarea');
     var timeoutID = null;
     var filenameBox = document.querySelector('#filename');
     
     // load/save cache in local storage
-    txtbox.value = localStorage.getItem('browserpad') || '';
-    txtbox.setSelectionRange(txtbox.value.length, txtbox.value.length); // place caret at end of content
-    function storeLocally() { localStorage.setItem('browserpad', txtbox.value); }
+    textbox.value = localStorage.getItem('browserpad') || '';
+    textbox.setSelectionRange(textbox.value.length, textbox.value.length); // place caret at end of content
+    function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
     window.beforeunload = storeLocally;
     
     // tab key support
-    txtbox.onkeypress = function (event) {
+    textbox.onkeypress = function (event) {
       if (event.keyCode === 9) {
         event.preventDefault();
         var text = this.value, s = this.selectionStart, e = this.selectionEnd;
@@ -80,7 +80,7 @@
     };
     
     // counters
-    txtbox.onkeyup = function () {
+    textbox.onkeyup = function () {
       document.querySelector('#char-count').textContent = this.value.length;
       document.querySelector('#word-count').textContent = this.value.replace(/\s+/g, ' ').split(' ').length;
       document.querySelector('#line-count').textContent = this.value.split(/\n/).length;
@@ -103,11 +103,10 @@
       reader.file = this.files[0]; // custom property so the filenameBox can be set from within reader.onload()
       reader.onload = function () {
         filenameBox.value = this.file.name;
-        txtbox.value = this.result; // this = FileReader
+        textbox.value = this.result; // this = FileReader
       };
       reader.readAsText(this.files[0]); // this = input
     };
-
   </script>
 </body>
 </html>
