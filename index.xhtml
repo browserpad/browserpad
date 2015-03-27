@@ -42,7 +42,9 @@
       <span id="line-count">0</span> lines
     </span>
     <span id="controls">
-	  <span id="open">
+      <input type="checkbox" id="spellcheck"/> |
+      <label for="spellcheck">spell-checking</label>
+      <span id="open">
         <input type="file" value="open"/>
         <a href="#">open</a>
       </span>
@@ -106,6 +108,11 @@
         textbox.value = this.result; // this = FileReader
       };
       reader.readAsText(this.files[0]); // this = input
+    };
+    
+    // toggle spell-checking
+    document.querySelector('#spellcheck').onchange = function () {
+      textbox.spellcheck = this.checked;
     };
   </script>
 </body>
