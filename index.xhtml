@@ -19,15 +19,15 @@
       position:fixed; bottom:0; left:0;
       box-sizing:border-box; width:100%; height:2rem; padding:0 0.5em;
       background-color:#eee; border-top:1px solid silver;
-      line-height:2rem; color:gray; font-family:monospace;
+      line-height:2rem; color:gray; font-family:sans-serif; font-size:85%;
     }
-    #save {
+    #controls {
       float:right;
     }
     #save a {
       text-decoration:none;
     }
-    #about {
+    #about, #open > input {
       display:none;
     }
     @media print { nav { display:none; } }
@@ -41,9 +41,15 @@
       <span id="word-count">0</span> words |
       <span id="line-count">0</span> lines
     </span>
-    <span id="save">
-      <input id="filename" placeholder="browserpad.txt"/>
-      <a href="#">save</a>
+    <span id="controls">
+	  <span id="open">
+        <input type="file" value="open"/>
+        <a href="#">open</a>
+      </span>
+      <span id="save">
+        <input id="filename" placeholder="browserpad.txt"/>
+        <a href="#">save</a>
+      </span>
     </span>
   </nav>
   <div id="about">
@@ -55,6 +61,7 @@
   <script>
     var txtbox = document.querySelector('textarea');
     var timeoutID = null;
+    var filenameBox = document.querySelector('#filename');
     
     // load/save cache in local storage
     txtbox.value = localStorage.getItem('browserpad') || '';
@@ -83,9 +90,24 @@
     
     // save as file
     document.querySelector('#save a').onclick = function () {
-      this.download = (document.querySelector('#filename').value || 'browserpad.txt').replace(/^([^.]*)$/, "$1.txt");
-      this.href = URL.createObjectURL(new Blob([document.querySelector('textarea').value], {type: 'text/plain'}));
+      this.download = (filenameBox.value || 'browserpad.txt').replace(/^([^.]*)$/, "$1.txt");
+      this.href = URL.createObjectURL(new Blob([document.querySelector('textarea').value] , {type:'text/plain'}));
     };
+    
+    // open file
+    document.querySelector('#open a').onclick = function () {
+      document.querySelector('#open input').click();
+    };
+    document.querySelector('#open input').onchange = function () {
+      var reader = new FileReader();
+      reader.file = this.files[0]; // custom property so the filenameBox can be set from within reader.onload()
+      reader.onload = function () {
+        filenameBox.value = this.file.name;
+        txtbox.value = this.result; // this = FileReader
+      };
+      reader.readAsText(this.files[0]); // this = input
+    };
+
   </script>
 </body>
 </html>
