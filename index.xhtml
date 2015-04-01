@@ -11,9 +11,18 @@
       height:100%; box-sizing:border-box; margin:0;
     }
     textarea {
-      width:100%; height:calc(100% - 2rem);
-      padding:0.5em; box-sizing:border-box;
+      width:100%; height:calc(100% - 2rem); box-sizing:border-box;
       border:none; outline:none; resize:none;
+    }
+    #textbox {
+      background-color:transparent; padding:0.5em;
+    }
+    #cpl {
+      border-right:1px solid PaleTurquoise;
+      width:calc(80ch + 1px);
+      margin-left:0.5em;
+      position:absolute;
+      z-index:-1
     }
     nav {
       position:fixed; bottom:0; left:0;
@@ -37,7 +46,8 @@
   </style>
 </head>
 <body>
-  <textarea autofocus="autofocus" placeholder="type here"></textarea>
+  <textarea id="cpl"/>
+  <textarea id="textbox" autofocus="autofocus" placeholder="type here"></textarea>
   <nav>
     <span id="stats">
       <span id="char-count">0</span> chars │
@@ -69,7 +79,7 @@
     <p>(<a href="https://github.com/Browserpad/browserpad">source code available on github</a>)</p>
   </div>
   <script>
-    var textbox = document.querySelector('textarea');
+    var textbox = document.querySelector('#textbox');
     var timeoutID = null;
     var filenameBox = document.querySelector('#filename');
     
