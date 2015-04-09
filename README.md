@@ -51,7 +51,7 @@ The aim of this guiding principle is to prevent feature creep
 - [x] auto-save using `localStorage` (see [here](https://github.com/JakobKallin/Text-Editor/blob/gh-pages/index.html))
 - [x] show statistics (lines/words/characters)
 - [ ] indent-deindent (with `Tab` / `Shift+Tab`)
-- [ ] keep selection visible (greyed out) when unfocused
+- [ ] keep selection visible (greyed out) when unfocused (see [here](http://stackoverflow.com/q/15523667/266309))
 - [ ] use contents of first line (or filename, if defined) as title
       (see [here](http://iamnotagoodartist.com/web/an-auto-updating-data-uri-text-editor/))
 - [ ] menu entries (menu icon: [≡](http://www.fileformat.info/info/unicode/char/2261/browsertest.htm))
