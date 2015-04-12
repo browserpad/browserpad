@@ -96,6 +96,7 @@
     // load/save cache in local storage
     textbox.value = localStorage.getItem('browserpad') || '';
     textbox.setSelectionRange(textbox.value.length, textbox.value.length); // place caret at end of content
+    calcStats(); // update counters after loading
     function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
     window.beforeunload = storeLocally;
     
@@ -109,14 +110,18 @@
       }
     };
     
-    // counters
     textbox.onkeyup = function () {
-      updateCount('char', this.value.length);
-      updateCount('word', (this.value === "") ? 0 : this.value.replace(/\s+/g, ' ').split(' ').length);
-      updateCount('line', (this.value === "") ? 0 : this.value.split(/\n/).length);
+      calcStats();
       window.clearTimeout(timeoutID); // prevent saving too frequently
       timeoutID = window.setTimeout(storeLocally, 1000);
     };
+    
+    // counters
+    function calcStats() {
+      updateCount('char', this.value.length);
+      updateCount('word', (this.value === "") ? 0 : this.value.replace(/\s+/g, ' ').split(' ').length);
+      updateCount('line', (this.value === "") ? 0 : this.value.split(/\n/).length);
+    }
     function updateCount(item, value) {
       document.querySelector('#' + item + '-count').textContent = value;
     }
