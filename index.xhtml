@@ -118,9 +118,9 @@
     
     // counters
     function calcStats() {
-      updateCount('char', this.value.length);
-      updateCount('word', (this.value === "") ? 0 : this.value.replace(/\s+/g, ' ').split(' ').length);
-      updateCount('line', (this.value === "") ? 0 : this.value.split(/\n/).length);
+      updateCount('char', textbox.value.length);
+      updateCount('word', (textbox.value === "") ? 0 : textbox.value.replace(/\s+/g, ' ').split(' ').length);
+      updateCount('line', (textbox.value === "") ? 0 : textbox.value.split(/\n/).length);
     }
     function updateCount(item, value) {
       document.querySelector('#' + item + '-count').textContent = value;
