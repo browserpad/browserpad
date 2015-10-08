@@ -69,7 +69,7 @@
         <input id="filename" placeholder="browserpad.txt"/>
         <a href="#">save</a>
       </span> │
-	    <a href="https://github.com/Browserpad/browserpad" title="source code on github">
+        <a href="https://github.com/Browserpad/browserpad" title="source code on github">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="20" height="20" viewBox="0 0 500 500">
           <path d="M 250, 0 c -138, 0 -250, 112 -250, 250, 0, 112, 73.3, 206, 174, 238, 10, 1, 14 -6, 14 -12
                    v -43 c -70, 16 -84 -33 -84 -33 -11.8 -29 -28.1 -37 -28.1 -37 -22.8 -15, 1.7 -15, 1.7 -15,
@@ -92,14 +92,14 @@
     var textbox = document.querySelector('#textbox');
     var timeoutID = null;
     var filenameBox = document.querySelector('#filename');
-    
+
     // load/save cache in local storage
     textbox.value = localStorage.getItem('browserpad') || '';
     textbox.setSelectionRange(textbox.value.length, textbox.value.length); // place caret at end of content
     calcStats(); // update counters after loading
     function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
     window.beforeunload = storeLocally;
-    
+
     // tab key support
     textbox.onkeypress = function (event) {
       if (event.keyCode === 9) {
@@ -109,13 +109,13 @@
         this.selectionStart = this.selectionEnd = s + 1;
       }
     };
-    
+
     textbox.onkeyup = function () {
       calcStats();
       window.clearTimeout(timeoutID); // prevent saving too frequently
       timeoutID = window.setTimeout(storeLocally, 1000);
     };
-    
+
     // counters
     function calcStats() {
       updateCount('char', textbox.value.length);
@@ -125,13 +125,13 @@
     function updateCount(item, value) {
       document.querySelector('#' + item + '-count').textContent = value;
     }
-    
+
     // save as file
     document.querySelector('#save a').onclick = function () {
       this.download = (filenameBox.value || 'browserpad.txt').replace(/^([^.]*)$/, "$1.txt");
       this.href = URL.createObjectURL(new Blob([document.querySelector('textarea').value] , {type:'text/plain'}));
     };
-    
+
     // open file
     document.querySelector('#open a').onclick = function () {
       document.querySelector('#open input').click();
@@ -145,7 +145,7 @@
       };
       reader.readAsText(this.files[0]); // this = input
     };
-    
+
     // toggle spell-checking
     document.querySelector('#spellcheck').onchange = function () {
       textbox.spellcheck = this.checked;
