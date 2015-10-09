@@ -1,9 +1,9 @@
-# Browserpad [![Build Status](https://travis-ci.org/browserpad/browserpad.svg)](https://travis-ci.org/browserpad/browserpad)
+# Browserpad [![Build Status](https://travis-ci.org/browserpad/browserpad.svg?branch=gh-pages)](https://travis-ci.org/browserpad/browserpad)
 
 An open-source browser-based plain text editor built entirely with HTML, CSS and JavaScript:
 
 > http://browserpad.org
-   
+
 Browserpad will always be a
    **[plaintext](http://en.wikipedia.org/wiki/Text_editor#Plain_text_files_vs._word_processor_files)** editor:
    no markdown/html preview, no WYSIWIG, no rich text editing.
@@ -58,7 +58,7 @@ The aim of this guiding principle is to prevent feature creep
    - [ ] contrast (normal / night mode). (see icon [here](http://pixelmack.github.io/slight/))
    - [ ] permalink / share ([via data url](http://iamnotagoodartist.com/web/an-auto-updating-data-uri-text-editor/))
    - [x] save to a file
-         (using the [download attribute](http://stackoverflow.com/q/283956/266309) of the `a` element; 
+         (using the [download attribute](http://stackoverflow.com/q/283956/266309) of the `a` element;
          [browser support for the download attribute](http://caniuse.com/#feat=download))
       - [x] save as (custom filename).
    - [x] load from a file on disk (based on [this implementation](https://github.com/itsapi/notepad))
