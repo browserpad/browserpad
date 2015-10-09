@@ -1,4 +1,4 @@
-# Browserpad
+# Browserpad [![Build Status](https://travis-ci.org/browserpad/browserpad.svg)](https://travis-ci.org/browserpad/browserpad)
 
 A browser-based plain text editor built entirely with HTML, CSS and JavaScript:
 
