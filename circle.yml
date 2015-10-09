@@ -1,0 +1,6 @@
+dependencies:
+  pre:
+    - npm install htmlhint
+test:
+  override:
+    - htmlhint --config htmlhint.conf index.xhtml
