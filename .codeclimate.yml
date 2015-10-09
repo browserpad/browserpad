@@ -1,0 +1,5 @@
+engines:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
