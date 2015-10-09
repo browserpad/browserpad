@@ -3,3 +3,6 @@ engines:
     enabled: true
   csslint:
     enabled: true
+ratings:
+   paths:
+   - index.xhtml
