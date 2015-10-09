@@ -1,6 +1,6 @@
 # Browserpad [![Build Status](https://travis-ci.org/browserpad/browserpad.svg?branch=gh-pages)](https://travis-ci.org/browserpad/browserpad)
 
-An open-source browser-based plain text editor built entirely with HTML, CSS and JavaScript:
+An open-source, browser-based plain text editor built entirely with HTML, CSS and JavaScript:
 
 > http://browserpad.org
 
