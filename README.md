@@ -31,10 +31,7 @@ The aim of this guiding principle is to prevent feature creep
       by [@paulirish](https://github.com/paulirish).
     * [This 9 December 2011 Hacker News comment](https://news.ycombinator.com/item?id=3333093)
       by [@bytex64](https://github.com/bytex64) mentions a talk about HTML5 where this was presented
-    * TODO: contact @tabatkins and @bytex64 to investigate this further and get to the bottom of it
-      (although maybe this may be irrelevant if we abandon the Data URI concept,
-      not to mention it is definitely not small anymore;
-      but it may still be nice to have the origins of Browserpad documented).
+    * @tabatkins and @bytex64 might have further info. It would be nice to get this documented.
 * The data URI approach was neat, but impractical,
   and was [eventually abandoned](https://github.com/browserpad/browserpad/issues/2)
   in favor of the regular html file approach.
