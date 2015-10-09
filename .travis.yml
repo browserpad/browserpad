@@ -1,5 +1,9 @@
 language: node_js
 
-install: htmlhint
+sudo: required
 
-script: htmlhint --config htmlhint.conf index.xhtml
+before_script:
+  - npm install -g htmlhint
+
+script:
+  - htmlhint --config htmlhint.conf index.xhtml
