@@ -1,5 +1,6 @@
+# How to set up these files: https://circleci.com/docs/configuration
 dependencies:
-  pre:
+  override:
     - npm install -g htmlhint
 test:
   override:
