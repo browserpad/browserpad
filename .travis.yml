@@ -1,4 +1,6 @@
 language: node_js
+node_js:
+  - stable
 
 # By default, gh-pages branch is not built unless you add it to the whitelist
 # http://docs.travis-ci.com/user/customizing-the-build/#Building-Specific-Branches
