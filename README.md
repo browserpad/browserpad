@@ -1,6 +1,5 @@
 [![Travis](https://img.shields.io/travis/browserpad/browserpad/gh-pages.svg)](https://travis-ci.org/browserpad/browserpad)
 [![Circle](https://img.shields.io/circleci/project/browserpad/browserpad/gh-pages.svg)](https://circleci.com/gh/browserpad/browserpad)
-[![SensioLabs](https://img.shields.io/sensiolabs/i/45afb680-d4e6-4e66-93ea-bcfa79eb8a87.svg)](https://insight.sensiolabs.com/projects/17225b5c-77ae-4497-b300-42d4ce919eac)
 
 # Browserpad 
 
