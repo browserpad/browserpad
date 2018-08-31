@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test:
+  build:
     machine: true
     steps:
       - run: npm install -g htmlhint
