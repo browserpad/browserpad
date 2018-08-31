@@ -3,5 +3,6 @@ jobs:
   build:
     machine: true
     steps:
+      - checkout
       - run: npm install -g htmlhint
       - run: htmlhint --config ../htmlhint.conf ../index.xhtml
