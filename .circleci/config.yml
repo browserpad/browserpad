@@ -4,4 +4,4 @@ jobs:
     machine: true
     steps:
       - run: npm install -g htmlhint
-      - run: htmlhint --config htmlhint.conf index.xhtml
+      - run: htmlhint --config ../htmlhint.conf ../index.xhtml
