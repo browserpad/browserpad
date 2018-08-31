@@ -1,0 +1,7 @@
+version: 2
+jobs:
+  test:
+    machine: true
+    steps:
+      - run: npm install -g htmlhint
+      - run: htmlhint --config htmlhint.conf index.xhtml

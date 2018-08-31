@@ -1,7 +1,0 @@
-# How to set up these files: https://circleci.com/docs/configuration
-dependencies:
-  override:
-    - npm install -g htmlhint
-test:
-  override:
-    - htmlhint --config htmlhint.conf index.xhtml
