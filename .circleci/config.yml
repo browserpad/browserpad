@@ -3,6 +3,6 @@ jobs:
   build:
     machine: true
     steps:
-      - checkout
+      - checkout # not sure why this isn't a default...
       - run: npm install -g htmlhint
       - run: htmlhint --config ../htmlhint.conf ../index.xhtml
