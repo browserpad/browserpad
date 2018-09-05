@@ -4,5 +4,6 @@ jobs:
     machine: true
     steps:
       - checkout # not sure why this isn't a default...
+      - run: ls
       - run: npm install -g htmlhint
-      - run: htmlhint --config ../htmlhint.conf ../index.xhtml
+      - run: htmlhint --config htmlhint.conf index.xhtml
