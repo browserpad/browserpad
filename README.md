@@ -1,5 +1,5 @@
-[![Travis](https://img.shields.io/travis/browserpad/browserpad/gh-pages.svg)](https://travis-ci.org/browserpad/browserpad)
-[![Circle](https://img.shields.io/circleci/project/browserpad/browserpad/gh-pages.svg)](https://circleci.com/gh/browserpad/browserpad)
+[![Travis](https://img.shields.io/travis/browserpad/browserpad/gh-pages.svg?logo=travis&label=Travis)](https://travis-ci.org/browserpad/browserpad)
+[![Circle](https://img.shields.io/circleci/project/github/browserpad/browserpad/gh-pages.svg?logo=circleci&label=Circle)](https://circleci.com/gh/browserpad/browserpad)
 
 # Browserpad 
 
