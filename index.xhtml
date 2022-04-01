@@ -62,6 +62,7 @@
     <span id="controls">
       <input type="checkbox" id="spellcheck" />
       <label for="spellcheck">spell-checking</label> │
+      <a href="#" id="print">print</a> │
       <span id="open">
         <input type="file" value="open" />
         <a href="#">open</a>
@@ -153,6 +154,33 @@
       textbox.spellcheck = this.checked;
     };
     textbox.spellcheck = document.querySelector('#spellcheck').checked; // initialize
+
+    //added a print option (issue #9)
+    document.querySelector("#print").onclick=function () {
+      window.print();
+    };
+
+    //ctrl-s ctrl-o
+    document.onkeydown = function (e) {
+      //console.log(e.keyCode);
+      if (e.ctrlKey) {
+        if(e.keyCode===83)
+        {
+          console.log("ctrl+s");
+          document.querySelector('#save a').click();
+          e.preventDefault();
+        }
+        else if(e.keyCode===79)
+        {
+          console.log("ctrl+o");
+          document.querySelector('#open input').click();
+          e.preventDefault();
+        }
+      }
+    }
+    //also i would love to clean up the code a bit if you're okay with that. By that i mean divide 
+    //it into proper functions and make it more readable. I wont change the actual code itself
+
   </script>
 </body>
 </html>
