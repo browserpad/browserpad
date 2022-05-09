@@ -155,14 +155,13 @@
     };
     textbox.spellcheck = document.querySelector('#spellcheck').checked; // initialize
 
-    //added a print option (issue #9)
+    // print the content
     document.querySelector("#print").onclick=function () {
       window.print();
     };
 
-    //ctrl-s ctrl-o
+    // keyboard shortcuts for the save and load functions (`Ctrl+S`, `Ctrl+O`)
     document.onkeydown = function (e) {
-      //console.log(e.keyCode);
       if (e.ctrlKey) {
         if(e.keyCode===83)
         {
@@ -178,8 +177,6 @@
         }
       }
     }
-    //also i would love to clean up the code a bit if you're okay with that. By that i mean divide 
-    //it into proper functions and make it more readable. I wont change the actual code itself
 
   </script>
 </body>
