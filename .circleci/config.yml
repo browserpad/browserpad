@@ -1,11 +1,17 @@
 # Documentation for CircleCI config files
 # - Simple example: https://circleci.com/docs/2.0/hello-world/
 # - Full reference: https://circleci.com/docs/2.0/configuration-reference/
-version: 2
+version: 2.1
 jobs:
   build:
-    machine: true # See: https://circleci.com/docs/2.0/executor-types/
+    machine:
+      image: ubuntu-2004:current
     steps:
-      - checkout # not sure why this isn't a default...
+      # https://circleci.com/docs/2.0/configuration-reference/#add-ssh-keys
+      # https://circleci.com/docs/2.0/gh-bb-integration/#creating-a-github-deploy-key
+      - add_ssh_keys:
+          fingerprints:
+            - "68:34:43:0a:71:24:10:cd:f3:3a:6f:e1:34:82:2d:3c"
+      - checkout
       - run: npm install -g htmlhint
       - run: htmlhint --config htmlhint.conf index.xhtml
