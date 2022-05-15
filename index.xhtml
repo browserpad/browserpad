@@ -97,6 +97,7 @@
     var textbox = document.querySelector('#textbox');
     var timeoutID = null;
     var filenameBox = document.querySelector('#filename');
+    var linebreak=document.querySelector("#line-wrapping");
 
     // load/save cache in local storage
     textbox.value = localStorage.getItem('browserpad') || '';
@@ -104,7 +105,7 @@
     calcStats(); // update counters after loading
     function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
     window.beforeunload = storeLocally;
-
+    linebreak.checked=false;
     // tab key support
     textbox.onkeypress = function (event) {
       if (event.keyCode === 9) {
@@ -178,25 +179,23 @@
       }
     }
     
-    // toggling line wrapping 
+    // toggle line wrapping 
     document.querySelector("#line-wrapping").onchange=function()
     {
       var textbox=document.querySelector("#textbox");
       var linewidth=document.querySelector("#linewidth-guide");
       if(document.querySelector("#line-wrapping").checked==true)
       {
-        textbox.style.paddingRight="0px";
+        textbox.style.paddingRight="0.5em";
         textbox.style.whiteSpace="pre";
-        linewidth.style.borderRightColor="White";
-      }   
+      }
       else
       {
+        // accounting the scroll bar for 17px
         textbox.style.paddingRight="calc(100% - 80ch - 0.5em - 17px)";
         textbox.style.whiteSpace="normal";
-        linewidth.style.borderRightColor="PaleTurquoise";
       }
-    };
-    
+    };    
   </script>
 </body>
 </html>
