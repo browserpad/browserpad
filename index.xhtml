@@ -60,6 +60,8 @@
       <span id="line-count">0</span> lines
     </span>
     <span id="controls">
+      <input type="checkbox" id="line-wrapping" />
+      <label for="line-wrapping">line-wrapping</label> │
       <input type="checkbox" id="spellcheck" />
       <label for="spellcheck">spell-checking</label> │
       <a href="#" id="print">print</a> │
@@ -183,6 +185,26 @@
       var text=(e.originalEvent||e).clipboardData.getData('text/plain');
       document.execCommand("insertText",false,text);
     });
+
+    // toggling line wrapping 
+    document.querySelector("#line-wrapping").onchange=function()
+    {
+      var textbox=document.querySelector("#textbox");
+      var linewidth=document.querySelector("#linewidth-guide");
+      if(document.querySelector("#line-wrapping").checked==true)
+      {
+        textbox.style.paddingRight="0px";
+        textbox.style.whiteSpace="pre";
+        linewidth.style.borderRightColor="White";
+      }   
+      else
+      {
+        textbox.style.paddingRight="calc(100% - 80ch - 0.5em - 17px)";
+        textbox.style.whiteSpace="normal";
+        linewidth.style.borderRightColor="PaleTurquoise";
+      }
+    };
+    
   </script>
 </body>
 </html>
