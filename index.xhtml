@@ -60,6 +60,8 @@
       <span id="line-count">0</span> lines
     </span>
     <span id="controls">
+      <input type="checkbox" id="line-wrapping" />
+      <label for="line-wrapping">line-wrapping</label> │
       <input type="checkbox" id="spellcheck" />
       <label for="spellcheck">spell-checking</label> │
       <a href="#" id="print">print</a> │
@@ -95,14 +97,18 @@
     var textbox = document.querySelector('#textbox');
     var timeoutID = null;
     var filenameBox = document.querySelector('#filename');
+    var linebreakCheckbox=document.querySelector("#line-wrapping");
 
     // load/save cache in local storage
     textbox.value = localStorage.getItem('browserpad') || '';
+    linebreakCheckbox.checked= localStorage.getItem('linebreak');
     textbox.setSelectionRange(textbox.value.length, textbox.value.length); // place caret at end of content
     calcStats(); // update counters after loading
-    function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
+    function storeLocally() 
+    { 
+      localStorage.setItem('browserpad', textbox.value);
+    }
     window.beforeunload = storeLocally;
-
     // tab key support
     textbox.onkeypress = function (event) {
       if (event.keyCode === 9) {
@@ -175,7 +181,29 @@
         }
       }
     }
-
+    
+    // toggle line wrapping 
+    document.querySelector("#line-wrapping").onchange=LinebreakToggle;
+    function LinebreakToggle()
+    {
+      var textbox=document.querySelector("#textbox");
+      if(linebreakCheckbox.checked==true)
+      {
+        textbox.style.paddingRight="0.5em";
+        textbox.style.whiteSpace="pre";
+      }
+      else
+      {
+        // accounting the scroll bar for 17px https://github.com/browserpad/browserpad/issues/17
+        textbox.style.paddingRight="calc(100% - 80ch - 0.5em - 17px)";
+        textbox.style.whiteSpace="normal";
+      }
+      localStorage.setItem('linebreak', document.querySelector("#line-wrapping").checked);
+    };
+    window.addEventListener("load",()=>
+    {
+      LinebreakToggle();
+    });
   </script>
 </body>
 </html>
