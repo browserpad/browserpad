@@ -38,7 +38,7 @@ function updateCount(item, value) {
 // save as file
 document.querySelector('#save a').onclick = function () {
     this.download = (filenameBox.value || 'browserpad.txt').replace(/^([^.]*)$/, "$1.txt");
-    this.href = URL.createObjectURL(new Blob([document.querySelector('textarea').value], { type: 'text/plain' }));
+    this.href = URL.createObjectURL(new Blob([document.querySelector('#textbox').value], { type: 'text/plain' }));
 };
 
 // open file
