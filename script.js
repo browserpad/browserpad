@@ -79,3 +79,8 @@ document.onkeydown = function (e) {
         }
     }
 }
+
+// show the about dialog
+document.querySelector("#about-icon").onclick = function () {
+    document.querySelector("#about").showModal();
+};

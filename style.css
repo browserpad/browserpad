@@ -32,8 +32,11 @@ nav {
 #save a {
   text-decoration: none;
 }
-#about, #open > input {
+#open > input {
   display: none;
+}
+#about > form {
+  text-align: right;
 }
 #about-icon {
   text-decoration: none;
