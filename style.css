@@ -35,7 +35,9 @@ nav {
 #about, #open > input {
   display: none;
 }
-svg {
-  vertical-align: middle;
+#about-icon {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 @media print { nav { display: none; } }
