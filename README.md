@@ -8,7 +8,7 @@ An open-source, browser-based plain text editor built entirely with HTML, CSS an
 
 Browserpad will always be a
    **[plaintext](http://en.wikipedia.org/wiki/Text_editor#Plain_text_files_vs._word_processor_files)** editor:
-   no markdown/html preview, no WYSIWIG, no rich text editing.
+   no Markdown/HTML preview, no WYSIWIG, no rich text editing.
 Think a browser-based [notepad](http://en.wikipedia.org/wiki/Notepad_%28software%29)
    with a few extra text manipulation features.
 The aim of this guiding principle is to prevent feature creep
@@ -33,7 +33,7 @@ The aim of this guiding principle is to prevent feature creep
   * @tabatkins and @bytex64 might have further info. It would be nice to get this documented.
 * The data URI approach was neat, but impractical,
   and was [eventually abandoned](https://github.com/browserpad/browserpad/issues/2)
-  in favor of the regular html file approach.
+  in favor of the regular HTML file approach.
 * Browserpad is heavily inspired by the existing (but proprietary) online plaintext editors:
   * [mytextarea.com](http://mytextarea.com)
   * [editpad.org](http://editpad.org)
