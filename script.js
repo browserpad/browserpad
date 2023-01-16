@@ -67,15 +67,15 @@ document.querySelector("#print").onclick = function () {
 };
 
 // keyboard shortcuts for the save and load functions (`Ctrl+S`, `Ctrl+O`)
-document.onkeydown = function (e) {
-    if (e.ctrlKey) {
-        if (e.keyCode === 83) {
+document.onkeydown = function (event) {
+    if (event.ctrlKey) {
+        if (event.keyCode === 83) {
             document.querySelector('#save a').click();
-            e.preventDefault();
+            event.preventDefault();
         }
-        else if (e.keyCode === 79) {
+        else if (event.keyCode === 79) {
             document.querySelector('#open input').click();
-            e.preventDefault();
+            event.preventDefault();
         }
     }
 }
