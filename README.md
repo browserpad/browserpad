@@ -1,4 +1,4 @@
-[![Circle](https://img.shields.io/circleci/project/github/browserpad/browserpad/gh-pages.svg?logo=circleci&label=Circle)](https://circleci.com/gh/browserpad/browserpad)
+[![Circle](https://img.shields.io/circleci/project/github/browserpad/browserpad/main.svg?logo=circleci&label=Circle+CI)](https://circleci.com/gh/browserpad/browserpad)
 
 # Browserpad
 
