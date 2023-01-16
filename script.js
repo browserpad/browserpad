@@ -2,14 +2,14 @@ var textbox = document.querySelector('#textbox');
 var timeoutID = null;
 var filenameBox = document.querySelector('#filename');
 
-// load/save cache in local storage
+// Automatically load/save cache in local storage when opening and closing the page
 textbox.value = localStorage.getItem('browserpad') || '';
-textbox.setSelectionRange(textbox.value.length, textbox.value.length); // place caret at end of content
-calcStats(); // update counters after loading
+textbox.setSelectionRange(textbox.value.length, textbox.value.length); // Place caret at end of content
+calcStats(); // Update counters after loading
 function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
 window.beforeunload = storeLocally;
 
-// tab key support
+// Allow inputting tabs in the textarea instead of changing focus to the next element
 textbox.onkeypress = function (event) {
     if (event.keyCode === 9) {
         event.preventDefault();
@@ -19,13 +19,14 @@ textbox.onkeypress = function (event) {
     }
 };
 
+// Auto-save to local storage and calculate stats on every keystroke
 textbox.onkeyup = function () {
     calcStats();
-    window.clearTimeout(timeoutID); // prevent saving too frequently
+    window.clearTimeout(timeoutID); // Prevent saving too frequently
     timeoutID = window.setTimeout(storeLocally, 1000);
 };
 
-// counters
+// Calculate and display character, words and line counts
 function calcStats() {
     updateCount('char', textbox.value.length);
     updateCount('word', textbox.value === "" ? 0 : textbox.value.replace(/\s+/g, ' ').split(' ').length);
@@ -35,52 +36,52 @@ function updateCount(item, value) {
     document.querySelector('#' + item + '-count').textContent = value;
 }
 
-// save as file
+// Save textarea contents as a text file
 document.querySelector('#save a').onclick = function () {
     this.download = (filenameBox.value || 'browserpad.txt').replace(/^([^.]*)$/, "$1.txt");
     this.href = URL.createObjectURL(new Blob([document.querySelector('#textbox').value], { type: 'text/plain' }));
 };
 
-// open file
+// Load contents from a text file
 document.querySelector('#open a').onclick = function () {
     document.querySelector('#open input').click();
 };
 document.querySelector('#open input').onchange = function () {
     var reader = new FileReader();
-    reader.file = this.files[0]; // custom property so the filenameBox can be set from within reader.onload()
+    reader.file = this.files[0]; // Custom property so the filenameBox can be set from within reader.onload()
     reader.onload = function () {
         filenameBox.value = this.file.name;
-        textbox.value = this.result; // this = FileReader
+        textbox.value = this.result; // this = FileReader object
     };
-    reader.readAsText(this.files[0]); // this = input
+    reader.readAsText(this.files[0]); // this = input element
 };
 
-// toggle spell-checking
+// Toggle spell-checking
 document.querySelector('#spellcheck').onchange = function () {
     textbox.spellcheck = this.checked;
 };
-textbox.spellcheck = document.querySelector('#spellcheck').checked; // initialize
+textbox.spellcheck = document.querySelector('#spellcheck').checked; // Initialize
 
-// print the content
+// Print the content
 document.querySelector("#print").onclick = function () {
     window.print();
 };
 
-// keyboard shortcuts for the save and load functions (`Ctrl+S`, `Ctrl+O`)
-document.onkeydown = function (e) {
-    if (e.ctrlKey) {
-        if (e.keyCode === 83) {
+// Keyboard shortcuts for the save and load functions (`Ctrl+S`, `Ctrl+O`)
+document.onkeydown = function (event) {
+    if (event.ctrlKey) {
+        if (event.keyCode === 83) {
             document.querySelector('#save a').click();
-            e.preventDefault();
+            event.preventDefault();
         }
-        else if (e.keyCode === 79) {
+        else if (event.keyCode === 79) {
             document.querySelector('#open input').click();
-            e.preventDefault();
+            event.preventDefault();
         }
     }
 }
 
-// show the about dialog
+// Show the about dialog
 document.querySelector("#about-icon").onclick = function () {
     document.querySelector("#about").showModal();
 };
