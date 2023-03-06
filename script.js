@@ -9,18 +9,16 @@ calcStats(); // Update counters after loading
 function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
 window.beforeunload = storeLocally;
 
-// Allow inputting tabs in the textarea instead of changing focus to the next element
-textbox.onkeypress = function (event) {
-    if (event.keyCode === 9) {
-        event.preventDefault();
+// Auto-save to local storage and calculate stats on every keystroke
+textbox.onkeydown = function (e) {
+    console.log("kliknuto");
+    if(e.keyCode==9)
+    {
+        e.preventDefault();
         var text = this.value, s = this.selectionStart, e = this.selectionEnd;
         this.value = text.substring(0, s) + '\t' + text.substring(e);
         this.selectionStart = this.selectionEnd = s + 1;
     }
-};
-
-// Auto-save to local storage and calculate stats on every keystroke
-textbox.onkeyup = function () {
     calcStats();
     window.clearTimeout(timeoutID); // Prevent saving too frequently
     timeoutID = window.setTimeout(storeLocally, 1000);
