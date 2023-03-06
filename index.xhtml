@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>Browserpad - A notepad in the browser</title>
@@ -8,6 +9,7 @@
     eNgjiioQdeqsuakXl6tIIjBQAh+QQBZAADACwAAAAAEAAQAAACIIyPacLtvp5kcb5qG85iZ2+BkyiRV8BBaEqtrKkqslEAADs=" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <textarea id="linewidth-guide" />
   <textarea id="textbox" autofocus="autofocus" placeholder="type here"></textarea>
@@ -28,17 +30,19 @@
       <span id="save">
         <input id="filename" placeholder="browserpad.txt" />
         <a href="#">save</a>
-      </span> │
-      <a href="#" title="About Browserpad" id="about-icon">ⓘ</a>
+      </span> │ 
+      <details class="details-with-dialog" id="about">
+        <summary>Ikonaⓘ</summary>
+        <details-dialog aria-label="Dialog with no CSS">
+          <h2>Browserpad</h2>
+          <p>As the name indicates, Browserpad is a notepad in the browser.</p>
+          <p>It is a plain text editor built entirely with HTML, CSS and JavaScript.</p>
+          <p>The source code is <a href="https://github.com/Browserpad/browserpad">available on GitHub</a>.</p>
+        </details-dialog>
+      </details>
     </span>
   </nav>
-  <dialog id="about">
-    <h2>Browserpad</h2>
-    <p>As the name indicates, Browserpad is a notepad in the browser.</p>
-    <p>It is a plain text editor built entirely with HTML, CSS and JavaScript.</p>
-    <p>The source code is <a href="https://github.com/Browserpad/browserpad">available on GitHub</a>.</p>
-    <form method="dialog"><button>close</button></form>
-  </dialog>
   <script src="script.js"></script>
 </body>
+
 </html>
