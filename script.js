@@ -11,7 +11,6 @@ window.beforeunload = storeLocally;
 
 // Auto-save to local storage and calculate stats on every keystroke
 textbox.onkeydown = function (e) {
-    console.log("kliknuto");
     if(e.keyCode==9)
     {
         e.preventDefault();
