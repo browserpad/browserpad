@@ -10,9 +10,13 @@ function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
 window.beforeunload = storeLocally;
 
 // Allow inputting tabs in the textarea instead of changing focus to the next element
-textbox.onkeypress = function (event) {
+var holdingTab = false;
+textbox.onkeydown = function (event) {
     if (event.key === "Tab") {
         event.preventDefault();
+        if (holdingTab == true)
+            return;
+        holdingTab = true;
         var text = this.value, s = this.selectionStart, e = this.selectionEnd;
         this.value = text.substring(0, s) + '\t' + text.substring(e);
         this.selectionStart = this.selectionEnd = s + 1;
@@ -22,6 +26,10 @@ textbox.onkeypress = function (event) {
     timeoutID = window.setTimeout(storeLocally, 1000);
 };
 
+// Checks if the tab key was let go or not, preventing the function above firing endlessly
+textbox.onkeyup = function () {
+    holdingTab = false;
+}
 // Calculate and display character, words and line counts
 function calcStats() {
     updateCount('char', textbox.value.length);
