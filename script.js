@@ -9,11 +9,10 @@ calcStats(); // Update counters after loading
 function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
 window.beforeunload = storeLocally;
 
-// Auto-save to local storage and calculate stats on every keystroke
-textbox.onkeydown = function (e) {
-    if(e.keyCode==9)
-    {
-        e.preventDefault();
+// Allow inputting tabs in the textarea instead of changing focus to the next element
+textbox.onkeypress = function (event) {
+    if (event.key === "Tab") {
+        event.preventDefault();
         var text = this.value, s = this.selectionStart, e = this.selectionEnd;
         this.value = text.substring(0, s) + '\t' + text.substring(e);
         this.selectionStart = this.selectionEnd = s + 1;
@@ -67,11 +66,11 @@ document.querySelector("#print").onclick = function () {
 // Keyboard shortcuts for the save and load functions (`Ctrl+S`, `Ctrl+O`)
 document.onkeydown = function (event) {
     if (event.ctrlKey) {
-        if (event.keyCode === 83) {
+        if (event.key === "s") {
             document.querySelector('#save a').click();
             event.preventDefault();
         }
-        else if (event.keyCode === 79) {
+        else if (event.key === "o") {
             document.querySelector('#open input').click();
             event.preventDefault();
         }
