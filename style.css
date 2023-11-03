@@ -15,7 +15,7 @@ textarea {
 }
 #linewidth-guide {
   border-right: 1px solid PaleTurquoise;
-  width: calc(80ch + 1px);
+  width: 100%;
   margin-left: 0.5em;
   position: absolute;
   z-index: -1;
