@@ -60,8 +60,10 @@ document.querySelector('#open input').onchange = function () {
 document.querySelector('#fullwidth').onchange = function () {
     if (this.checked == true) {
         document.getElementById('linewidth-guide').style.width = "calc(80ch + 1px)";
+        document.getElementById('linewidth-guide').style.width = "padding-right: calc(100% - 80ch - 0.5em - 17px)";
     } else {
         document.getElementById('linewidth-guide').style.width = "100%";
+        document.getElementById('linewidth-guide').style.width = "padding-right: 0.5em";
     }
 };
 
