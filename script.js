@@ -56,6 +56,15 @@ document.querySelector('#open input').onchange = function () {
     reader.readAsText(this.files[0]); // this = input element
 };
 
+//Toggle Fullwidth vs 80 Column
+document.querySelector('#fullwidth').onchange = function () {
+    if (this.checked == true) {
+        document.getElementById('textbox').style.width = "calc(80ch + 1.5em + " + (textbox.offsetWidth - textbox.clientWidth) + "px)";
+    } else {
+        document.getElementById('textbox').style.width = "100%";
+    }
+};
+
 // Toggle spell-checking
 document.querySelector('#spellcheck').onchange = function () {
     textbox.spellcheck = this.checked;
