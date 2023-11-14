@@ -59,7 +59,7 @@ document.querySelector('#open input').onchange = function () {
 //Toggle Fullwidth vs 80 Column
 document.querySelector('#fullwidth').onchange = function () {
     if (this.checked == true) {
-        document.getElementById('textbox').style.width = "calc(80ch + 1em)";
+        document.getElementById('textbox').style.width = "calc(80ch + 1.5em)";
     } else {
         document.getElementById('textbox').style.width = "100%";
     }
