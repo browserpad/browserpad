@@ -1,13 +1,10 @@
 html, body {
   height: 100%; box-sizing: border-box; margin: 0;
 }
-textarea {
-  height: calc(100% - 2rem); box-sizing: border-box;
-  border: none; outline: none; resize: none;
-  font-family: monospace;
-}
 #textbox {
   border-right: 1px solid PaleTurquoise;
+  border-radius: 0px;
+  border-color: darkgray;
   background-color: transparent;
   width: 100%;
   padding: 0.5em;
