@@ -20,10 +20,12 @@ textbox.onkeydown = function (event) {
     }
 };
 
-// Auto-save to local storage and calculate stats on every keystroke
 textbox.onkeyup = function () {
+    // Calculate text stats (using onkeyup is needed to update the count when deleting text)
     calcStats();
-    window.clearTimeout(timeoutID); // Prevent saving too frequently
+
+    // Auto-save to local storage (at most once per second)
+    window.clearTimeout(timeoutID);
     timeoutID = window.setTimeout(storeLocally, 1000);
 };
 
