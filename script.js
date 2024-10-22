@@ -10,7 +10,8 @@ function storeLocally() { localStorage.setItem('browserpad', textbox.value); }
 window.beforeunload = storeLocally;
 
 // Allow inputting tabs in the textarea instead of changing focus to the next element
-textbox.onkeypress = function (event) {
+// (must use onkeydown to prevent default behavior of moving focus)
+textbox.onkeydown = function (event) {
     if (event.key === "Tab") {
         event.preventDefault();
         var text = this.value, s = this.selectionStart, e = this.selectionEnd;
@@ -19,10 +20,12 @@ textbox.onkeypress = function (event) {
     }
 };
 
-// Auto-save to local storage and calculate stats on every keystroke
 textbox.onkeyup = function () {
+    // Calculate text stats (using onkeyup is needed to update the count when deleting text)
     calcStats();
-    window.clearTimeout(timeoutID); // Prevent saving too frequently
+
+    // Auto-save to local storage (at most once per second)
+    window.clearTimeout(timeoutID);
     timeoutID = window.setTimeout(storeLocally, 1000);
 };
 
